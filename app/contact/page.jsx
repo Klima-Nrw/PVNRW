@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Headers from "../../components/header";
 import Footer from "../../components/footer";
+import Link from 'next/link';
 
 export default function About() {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ export default function About() {
   });
 
   const [statusMessage, setStatusMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -24,7 +26,8 @@ export default function About() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setStatusMessage('Sending...');
+    setStatusMessage(''); // Reset status message
+    setIsLoading(true); // Set loading state
 
     try {
       const response = await fetch('/api/contact', {
@@ -36,15 +39,17 @@ export default function About() {
       });
 
       const result = await response.json();
-      
+
       if (response.ok) {
         setStatusMessage('Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
       } else {
         setStatusMessage(result.message || 'Failed to send message');
       }
     } catch (error) {
-     // console.error('Error:', error);
       setStatusMessage('An error occurred. Please try again later.');
+    } finally {
+      setIsLoading(false); // Reset loading state
     }
   };
 
@@ -59,11 +64,8 @@ export default function About() {
           <nav aria-label="breadcrumb animated slideInDown">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
-                <a className="text-white" href="#">Startseite</a>
-              </li>
-              <li className="breadcrumb-item">
-                <a className="text-white" href="#">Seiten</a>
-              </li>
+                <Link className="text-white" href="/">Startseite</Link>
+              </li>             
               <li className="breadcrumb-item text-white active" aria-current="page">Kontakt</li>
             </ol>
           </nav>
@@ -79,7 +81,7 @@ export default function About() {
                 <h6 className="text-primary">Kontaktieren Sie uns</h6>
                 <h1 className="mb-4">Zögern Sie nicht, uns zu kontaktieren</h1>
                 <p className="mb-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Haben Sie Fragen oder benötigen Sie Hilfe? Kontaktieren Sie uns jederzeit. Wir sind bestrebt, Ihnen die Unterstützung zu bieten, die Sie zum Erreichen Ihrer Ziele benötigen.
                 </p>
                 <form onSubmit={handleSubmit}>
                   <div className="row g-3">
@@ -140,13 +142,13 @@ export default function About() {
                       </div>
                     </div>
                     <div className="col-12">
-                      <button className="btn btn-primary rounded-pill py-3 px-5" type="submit">
-                        Nachricht senden
+                      <button className="btn btn-primary rounded-pill py-3 px-5" type="submit" disabled={isLoading}>
+                        {isLoading ? 'Senden...' : 'Nachricht senden'}
                       </button>
                     </div>
                   </div>
                 </form>
-                {statusMessage && <p>{statusMessage}</p>}
+                {statusMessage && <p className="mt-3">{statusMessage}</p>}
               </div>
             </div>
             <div className="col-lg-6 pe-lg-0" style={{ minHeight: 400 }}>

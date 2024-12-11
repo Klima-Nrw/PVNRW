@@ -25,7 +25,7 @@ export default function Headerspage() {
   </div>
 
 
-            <div className="h-100 d-inline-flex align-items-center mx-n2">
+             {/*<div className="h-100 d-inline-flex align-items-center mx-n2">
               <Link
                 className="btn btn-square btn-link rounded-0 border-0 border-end border-secondary"
                 href=""
@@ -41,7 +41,7 @@ export default function Headerspage() {
               <Link className="btn btn-square btn-link rounded-0" href="">
                 <i className="fab fa-instagram" />
               </Link>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>

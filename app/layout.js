@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function RootLayout({ children }) {
   return (
@@ -36,8 +37,8 @@ export default function RootLayout({ children }) {
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <a
-  href="#"
+    <Link
+  href="/quote"
   className="btn btn-primary rounded-circle d-md-none back-to-top"
   style={{
     
@@ -53,7 +54,9 @@ export default function RootLayout({ children }) {
   <span className="text-white text-center" style={{ fontSize: '10px' }}>
     Get Free Quote
   </span>
-</a>
+</Link>
+
+
 
 
 

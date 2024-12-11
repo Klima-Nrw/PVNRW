@@ -7,25 +7,34 @@ export default async function handler(req, res) {
 
     // Configure the transporter using your SMTP server details
     const transporter = nodemailer.createTransport({
-      host: 'smtps.udag.de',
-      port: 465,
-      secure: true, // Use SSL/TLS
+      host: process.env.EMAIL_HOST,
+      port: process.env.EMAIL_PORT,
+      secure: true, // true for 465, false for other ports
       auth: {
-        user: 'alexander@pvnrw.de', // Replace with your email
-        pass: 'Klimanrw1996!',   // Replace with your email password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     const mailOptions = {
-      from: email, // Sender's email address
+      from: 'alexander@pvnrw.de', // Sender's email address
       to: 'maazmasood001@gmail.com', // Replace with your email where you want to receive the form data
       subject: subject,
-      text: `You have a new contact form submission.\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
-      html: `<p>You have a new contact form submission.</p><p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong> ${message}</p>`,
+      text: `You have a new contact form submission.\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`,
+      html: `<p>You have a new contact form submission.</p><p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Subject:</strong> ${subject}</p><p><strong>Message:</strong> ${message}</p>`,
+    };
+
+    const mailOptions2 = {
+      from: 'alexander@pvnrw.de', // Sender's email address
+      to: 'info@pvnrw.de', // Replace with your email where you want to receive the form data
+      subject: subject,
+      text: `You have a new contact form submission.\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`,
+      html: `<p>You have a new contact form submission.</p><p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Subject:</strong> ${subject}</p><p><strong>Message:</strong> ${message}</p>`,
     };
 
     try {
-    //  await transporter.sendMail(mailOptions);
+     // await transporter.sendMail(mailOptions);
+     // await transporter.sendMail(mailOptions2);
       res.status(200).json({ message: 'Message sent successfully!' });
     } catch (error) {
       console.error(error);

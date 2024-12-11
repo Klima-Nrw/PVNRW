@@ -12,7 +12,7 @@ export default function Footer() {
       >
         <div className="container py-5">
           <div className="row g-5">
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-4 col-md-6">
               <h5 className="text-white mb-4">Adresse</h5>
               <p className="mb-2">
   <i className="fa fa-map-marker-alt me-3" />
@@ -27,7 +27,7 @@ export default function Footer() {
   info@pvnrw.de
 </p>
 
-              <div className="d-flex pt-2">
+             {/* <div className="d-flex pt-2">
                 
                 <Link href="#" className="btn btn-square btn-outline-light btn-social">
                   <i className="fab fa-facebook-f" />
@@ -38,9 +38,9 @@ export default function Footer() {
                 <Link href="#" className="btn btn-square btn-outline-light btn-social">
                   <i className="fab fa-linkedin-in" />
                 </Link>
-              </div>
+              </div>*/}
             </div>
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-4 col-md-6">
   <h5 className="text-white mb-4">Schnellzugriffe</h5>
   <Link href="/about" className="btn btn-link">
     Über uns
@@ -61,7 +61,7 @@ export default function Footer() {
  
 </div>
 
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-4 col-md-6">
               <h5 className="text-white mb-4">Projekt Galerie</h5>
               <div className="row g-2">
                 <div className="col-4">
@@ -108,23 +108,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6">
-              <h5 className="text-white mb-4">Erhalten Sie Rabattangebote</h5>
-              <p>Abonnieren Sie, um exklusive Rabatte und Angebote zu erhalten.</p>
-              <div className="position-relative mx-auto" style={{ maxWidth: 400 }}>
-                <input
-                  className="form-control border-0 w-100 py-3 ps-4 pe-5"
-                  type="text"
-                  placeholder="Ihre E-Mail"
-                />
-                <button
-                  type="button"
-                  className="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
-                >
-                  Abonnieren
-                </button>
-              </div>
-            </div>
+            
           </div>
         </div>
         <div className="container">

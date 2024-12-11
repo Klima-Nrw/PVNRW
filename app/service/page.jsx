@@ -1,6 +1,7 @@
 
 import Footer from "@/components/footer";
 import Headers from "../../components/header"
+import Link from "next/link";
 
 
   export default function About() {
@@ -19,15 +20,10 @@ import Headers from "../../components/header"
       <nav aria-label="breadcrumb animated slideInDown">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <a className="text-white" href="#">
+            <Link className="text-white" href="/">
               Home
-            </a>
-          </li>
-          <li className="breadcrumb-item">
-            <a className="text-white" href="#">
-              Pages
-            </a>
-          </li>
+            </Link>
+          </li>          
           <li className="breadcrumb-item text-white active" aria-current="page">
             Services
           </li>

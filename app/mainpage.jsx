@@ -1,11 +1,7 @@
 "use client";
 import dynamic from 'next/dynamic'
- 
+import Link from 'next/link';
 
-export const metadata = {
-  title: "PVNrw | Wir installieren Solaranlagen",
-  description: "Reduzieren Sie Ihre Stromkosten und leisten Sie einen Beitrag zu einer sauberen, grüneren Zukunft mit unseren hochwertigen Solarpanel-Lösungen",
-};
 
 
 export default function Page() {
@@ -54,21 +50,21 @@ export default function Page() {
 
   About Start */}
 
-<title>PVNRW | Solar Systems</title>
+<title>PVNrw | Wir installieren Solaranlagen</title>
 <section className="py-5 bg-light">
   <div className="container">
     <div className="row align-items-center">
       <div className="col-lg-6 mb-4 mb-lg-0">
         <h1 className="display-3 fw-bold">
-          Machen Sie Ihr Zuhause unabhängig mit{" "}
+        Wir kaufen, installieren und warten für Sie{" "}
           <span className="text-primary">Solarenergie</span>
         </h1>
         <p className="lead my-4">
           Reduzieren Sie Ihre Stromkosten und leisten Sie einen Beitrag zu einer sauberen, grüneren Zukunft mit unseren hochwertigen Solarpanel-Lösungen.
         </p>
-        <a className="btn btn-lg btn-primary" href="#">
+        <Link className="btn btn-lg btn-primary" href="/service">
           Mehr erfahren
-        </a>
+        </Link>
       </div>
       <div className="col-lg-6">
         <img
@@ -196,13 +192,13 @@ export default function Page() {
     <i className="fa fa-check-circle text-primary me-3" />
     Engagierter Kundenservice und ein nahtloser Installationsprozess
   </p>
-  <a
-    href=""
+  <Link
+    href="/about"
     className="btn btn-primary rounded-pill py-3 px-5 mt-3"
     title="Erfahren Sie mehr über unsere Solarenergie-Lösungen"
   >
     Mehr Erfahren
-  </a>
+  </Link>
 </div>
 
 
@@ -240,10 +236,10 @@ export default function Page() {
           <p>
             Unsere Auf-Dach-Solaranlagen sorgen für eine optimale Energieerfassung und bieten die beste Effizienz für Ihr Zuhause oder Unternehmen.
           </p>
-          <a className="small fw-medium" href="">
+          <Link className="small fw-medium" href="/about">
             Mehr Erfahren
             <i className="fa fa-arrow-right ms-2" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -262,10 +258,10 @@ export default function Page() {
           <p>
           Unsere Solaranlagen für Flächen bieten eine flexible Lösung für Standorte mit begrenztem Dachraum und maximieren die Energie.
           </p>
-          <a className="small fw-medium" href="">
+          <Link className="small fw-medium" href="/service">
             Mehr Erfahren
             <i className="fa fa-arrow-right ms-2" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -284,10 +280,10 @@ export default function Page() {
           <p>
             Wir bieten umfassende Wartungsdienste, damit Ihre Solaranlage dauerhaft mit maximaler Effizienz arbeitet.
           </p>
-          <a className="small fw-medium" href="">
+          <Link className="small fw-medium" href="/service">
             Mehr Erfahren
             <i className="fa fa-arrow-right ms-2" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -403,6 +399,7 @@ export default function Page() {
         <img className="img-fluid" src="img/img-600x400-1.jpg" alt="Solaranlage Installation auf Dach" />
         <div className="portfolio-btn">
           <a
+          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
             href="img/img-600x400-1.jpg"
             data-lightbox="portfolio"
@@ -424,6 +421,7 @@ export default function Page() {
         <img className="img-fluid" src="img/img-600x400-2.jpg" alt="Solaranlage auf Flachdach" />
         <div className="portfolio-btn">
           <a
+          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
             href="img/img-600x400-2.jpg"
             data-lightbox="portfolio"
@@ -445,6 +443,7 @@ export default function Page() {
         <img className="img-fluid" src="img/img-600x400-3.jpg" alt="Solarwartung auf Dach" />
         <div className="portfolio-btn">
           <a
+          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
             href="img/img-600x400-3.jpg"
             data-lightbox="portfolio"
@@ -472,6 +471,7 @@ export default function Page() {
         <img className="img-fluid" src="img/img-600x400-1.jpg" alt="Solaranlage Installation auf Dach" />
         <div className="portfolio-btn">
           <a
+          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
             href="img/img-600x400-1.jpg"
             data-lightbox="portfolio"
@@ -493,6 +493,7 @@ export default function Page() {
         <img className="img-fluid" src="img/img-600x400-2.jpg" alt="Solaranlage auf Flachdach" />
         <div className="portfolio-btn">
           <a
+          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
             href="img/img-600x400-2.jpg"
             data-lightbox="portfolio"
@@ -514,6 +515,7 @@ export default function Page() {
         <img className="img-fluid" src="img/img-600x400-3.jpg" alt="Solarwartung auf Dach" />
         <div className="portfolio-btn">
           <a
+          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
             href="img/img-600x400-3.jpg"
             data-lightbox="portfolio"
@@ -746,11 +748,11 @@ export default function Page() {
 
 
 <a
-    href="#"
-    className="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top d-hidden d-md-visible"
-  >
-    <i className="bi bi-arrow-up" />
-  </a>
+  href="#"
+  className="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top d-none d-md-flex"
+>
+  <i className="bi bi-arrow-up"></i>
+</a>
 
 </>
 
