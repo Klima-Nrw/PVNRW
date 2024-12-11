@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+
+# Output directory
+.next/
+
+# Build output
+out/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing and coverage
+coverage/
+.nyc_output/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.iml
+
+# Optional npm files
+package-lock.json

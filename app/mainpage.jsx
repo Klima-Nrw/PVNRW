@@ -1,6 +1,13 @@
 "use client";
 import dynamic from 'next/dynamic'
  
+
+export const metadata = {
+  title: "PVNrw | Wir installieren Solaranlagen",
+  description: "Reduzieren Sie Ihre Stromkosten und leisten Sie einen Beitrag zu einer sauberen, grüneren Zukunft mit unseren hochwertigen Solarpanel-Lösungen",
+};
+
+
 export default function Page() {
   return (
     <>
