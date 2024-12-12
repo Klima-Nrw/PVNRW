@@ -15,18 +15,18 @@ import Link from "next/link";
   <div className="container-fluid page-header py-5 mb-5">
     <div className="container py-5">
       <h1 className="display-3 text-white mb-3 animated slideInDown">
-        Projects
+      Projekte
       </h1>
       <nav aria-label="breadcrumb animated slideInDown">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
             <Link className="text-white" href="/">
-              Home
+            Startseite
             </Link>
           </li>
           
           <li className="breadcrumb-item text-white active" aria-current="page">
-            Projects
+          Projekte
           </li>
         </ol>
       </nav>

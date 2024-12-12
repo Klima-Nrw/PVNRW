@@ -16,11 +16,11 @@ export default function Footer() {
               <h5 className="text-white mb-4">Adresse</h5>
               <p className="mb-2">
   <i className="fa fa-map-marker-alt me-3" />
-  Musterstraße 123, Berlin, Deutschland
+  Wischenstück 30, 46286 Dorsten, Germany
 </p>
 <p className="mb-2">
   <i className="fa fa-phone-alt me-3" />
-  +49 123 4567890
+  +4915901488768
 </p>
 <p className="mb-2">
   <i className="fa fa-envelope me-3" />
@@ -67,42 +67,42 @@ export default function Footer() {
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/gallery-1.jpg"
+                    src="img/recentwork-2.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/gallery-2.jpg"
+                    src="img/recentwork-1.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/gallery-3.jpg"
+                    src="img/recentwork-3.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/gallery-4.jpg"
+                    src="img/recentwork-4.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/gallery-5.jpg"
+                    src="img/recentwork-9.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/gallery-6.jpg"
+                    src="img/recentwork-5.jpg"
                     alt=""
                   />
                 </div>

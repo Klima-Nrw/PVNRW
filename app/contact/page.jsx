@@ -153,16 +153,16 @@ export default function About() {
             </div>
             <div className="col-lg-6 pe-lg-0" style={{ minHeight: 400 }}>
               <div className="position-relative h-100">
-                <iframe
-                  className="position-absolute w-100 h-100"
-                  style={{ objectFit: "cover" }}
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                  frameBorder={0}
-                  allowFullScreen=""
-                  aria-hidden="false"
-                  tabIndex={0}
-                />
-              </div>
+              <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2470.846679893831!2d7.050641000000001!3d51.735839600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8f78b24ff2001%3A0x984e7e39d3a0e3a0!2sPVNRW!5e0!3m2!1sen!2s!4v1734035380108!5m2!1sen!2s"
+  width={'100%'}
+  height={650}
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
+ </div>
             </div>
           </div>
         </div>

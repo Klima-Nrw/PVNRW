@@ -11,17 +11,23 @@ export default function Headerspage() {
           <div className="col-lg-7 px-5 text-start">
           <div className="h-100 d-inline-flex align-items-center me-4">
   <small className="fa fa-map-marker-alt text-primary me-2" />
-  <small>Musterstraße 123, Berlin, Deutschland</small>
+  <small>Wischenstück 30, 46286 Dorsten, Germany</small>
 </div>
 <div className="h-100 d-inline-flex align-items-center">
   <small className="far fa-clock text-primary me-2" />
-  <small>Mo - Fr: 09:00 - 21:00 Uhr</small>
+  <small>Mon - Fri: 9:00- 17:00 </small>
 </div>
 </div>
 <div className="col-lg-5 px-5 text-end">
+<div className="h-100 d-inline-flex align-items-center me-4">
+  <span className="fa fa-phone-alt text-primary me-2" />
+  <span>+4915901488768</span>
+  
+  </div>
   <div className="h-100 d-inline-flex align-items-center me-4">
-    <span className="fa fa-phone-alt text-primary me-2" />
-    <span>+49 123 456789</span>
+  <span className="fa fa-envelope text-primary me-2" />
+  <span>info@pvnrw.de</span>
+  
   </div>
 
 
