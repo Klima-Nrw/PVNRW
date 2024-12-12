@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
   }}
 >
   <span className="text-white text-center" style={{ fontSize: '10px' }}>
-    Get Free Quote
+    Kostenloses Angebot einholen
   </span>
 </Link>
 
