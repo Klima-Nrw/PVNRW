@@ -56,8 +56,8 @@ export default function Page() {
     <div className="row align-items-center">
       <div className="col-lg-6 mb-4 mb-lg-0">
         <h1 className="display-3 fw-bold">
-        Wir kaufen, installieren und warten für Sie{" "}
-          <span className="text-primary">Solarenergie</span>
+       Verkauf, Montage, Reinigung {" "}
+          <span className="text-primary">Alles aus einer Hand !</span>
         </h1>
         <p className="lead my-4">
           Reduzieren Sie Ihre Stromkosten und leisten Sie einen Beitrag zu einer sauberen, grüneren Zukunft mit unseren hochwertigen Solarpanel-Lösungen.
