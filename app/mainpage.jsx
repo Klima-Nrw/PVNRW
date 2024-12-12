@@ -391,146 +391,104 @@ export default function Page() {
     </h1>
   </div>      
   <div
-    className="row g-4 portfolio-container wow fadeInUp"
+    className="row g-4 mt-4 portfolio-container wow fadeInUp"
     data-wow-delay="0.5s"
   >
     <div className="col-lg-4 col-md-6 portfolio-item first">
       <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/img-600x400-1.jpg" alt="Solaranlage Installation auf Dach" />
+        <img className="img-fluid" src="img/recentwork-4.jpg" alt="Solaranlage Installation auf Dach" />
         <div className="portfolio-btn">
           <a
-          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/img-600x400-1.jpg"
+            href="img/recentwork-4.jpg"
             data-lightbox="portfolio"
           >
             <i className="fa fa-eye" />
           </a>
         </div>
       </div>
-      <div className="pt-3">
-        <p className="text-primary mb-0">Solaranlage auf Dach</p>
-        <hr className="text-primary w-25 my-2" />
-        <h5 className="lh-base">
-          Erfolgreich installierte Solarmodule auf dem Dach von XYZ Corporation, Reduzierung der Energiekosten um 40%
-        </h5>
-      </div>
+     
     </div>
     <div className="col-lg-4 col-md-6 portfolio-item second">
       <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/img-600x400-2.jpg" alt="Solaranlage auf Flachdach" />
+        <img className="img-fluid" src="img/recentwork-5.jpg" alt="Solaranlage auf Flachdach" />
         <div className="portfolio-btn">
           <a
-          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/img-600x400-2.jpg"
+            href="img/recentwork-5.jpg"
             data-lightbox="portfolio"
           >
             <i className="fa fa-eye" />
           </a>
         </div>
       </div>
-      <div className="pt-3">
-        <p className="text-primary mb-0">Solaranlage auf Flachdach</p>
-        <hr className="text-primary w-25 my-2" />
-        <h5 className="lh-base">
-          Installierte Flachdach-Solarmodule für GreenTech Industries, Verbesserung der Energieeffizienz um 35%
-        </h5>
-      </div>
+      
     </div>
     <div className="col-lg-4 col-md-6 portfolio-item third">
       <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/img-600x400-3.jpg" alt="Solarwartung auf Dach" />
+        <img className="img-fluid" src="img/recentwork-1.jpg" alt="Solarwartung auf Dach" />
         <div className="portfolio-btn">
           <a
-          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/img-600x400-3.jpg"
+            href="img/recentwork-1.jpg"
             data-lightbox="portfolio"
           >
             <i className="fa fa-eye" />
           </a>
         </div>
       </div>
-      <div className="pt-3">
-        <p className="text-primary mb-0">Solarwartung</p>
-        <hr className="text-primary w-25 my-2" />
-        <h5 className="lh-base">
-          Durchführung einer umfassenden Wartung eines Solarsystems für ein Wohnprojekt, maximale Effizienz wiederhergestellt
-        </h5>
-      </div>
+     
     </div>
   </div>
 
   <div
-    className="row g-4 portfolio-container wow fadeInUp"
+    className="row g-4 mt-4 portfolio-container wow fadeInUp"
     data-wow-delay="0.5s"
   >
     <div className="col-lg-4 col-md-6 portfolio-item first">
       <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/img-600x400-1.jpg" alt="Solaranlage Installation auf Dach" />
+        <img className="img-fluid" src="img/recentwork-3.jpg" alt="Solaranlage Installation auf Dach" />
         <div className="portfolio-btn">
           <a
-          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/img-600x400-1.jpg"
+            href="img/recentwork-3.jpg"
             data-lightbox="portfolio"
           >
             <i className="fa fa-eye" />
           </a>
         </div>
       </div>
-      <div className="pt-3">
-        <p className="text-primary mb-0">Solaranlage auf Dach</p>
-        <hr className="text-primary w-25 my-2" />
-        <h5 className="lh-base">
-          Erfolgreich installierte Solarmodule auf dem Dach von XYZ Corporation, Reduzierung der Energiekosten um 40%
-        </h5>
-      </div>
+     
     </div>
     <div className="col-lg-4 col-md-6 portfolio-item second">
       <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/img-600x400-2.jpg" alt="Solaranlage auf Flachdach" />
+        <img className="img-fluid" src="img/recentwork-2.jpg" alt="Solaranlage auf Flachdach" />
         <div className="portfolio-btn">
           <a
-          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/img-600x400-2.jpg"
+            href="img/recentwork-2.jpg"
             data-lightbox="portfolio"
           >
             <i className="fa fa-eye" />
           </a>
         </div>
       </div>
-      <div className="pt-3">
-        <p className="text-primary mb-0">Solaranlage auf Flachdach</p>
-        <hr className="text-primary w-25 my-2" />
-        <h5 className="lh-base">
-          Installierte Flachdach-Solarmodule für GreenTech Industries, Verbesserung der Energieeffizienz um 35%
-        </h5>
-      </div>
+      
     </div>
     <div className="col-lg-4 col-md-6 portfolio-item third">
       <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/img-600x400-3.jpg" alt="Solarwartung auf Dach" />
+        <img className="img-fluid" src="img/recentwork-9.jpg" alt="Solarwartung auf Dach" />
         <div className="portfolio-btn">
           <a
-          target="_blank"
             className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/img-600x400-3.jpg"
+            href="img/recentwork-9.jpg"
             data-lightbox="portfolio"
           >
             <i className="fa fa-eye" />
           </a>
         </div>
       </div>
-      <div className="pt-3">
-        <p className="text-primary mb-0">Solarwartung</p>
-        <hr className="text-primary w-25 my-2" />
-        <h5 className="lh-base">
-          Durchführung einer umfassenden Wartung eines Solarsystems für ein Wohnprojekt, maximale Effizienz wiederhergestellt
-        </h5>
-      </div>
+     
     </div>
   </div>
 </div>
