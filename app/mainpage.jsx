@@ -172,7 +172,7 @@ export default function Page() {
        <div className="p-lg-5 pe-lg-0">
   <h6 className="text-primary">Über Uns</h6>
   <h1 className="mb-4">
-    Über 25 Jahre Erfahrung in Solar- & Erneuerbare-Energien-Lösungen
+    Über 70 Jahre Erfahrung in Solar- & Erneuerbare-Energien-Lösungen
   </h1>
   <p>
     Wir sind ein führender Anbieter von Solarenergie-Lösungen mit über 25 Jahren
