@@ -38,12 +38,12 @@ export default function About() {
                   <i className="fa fa-users text-white" />
                 </div>
                 <h1 className="mb-0" data-toggle="counter-up">
-                  3453
+                  100%
                 </h1>
               </div>
               <h5 className="mb-3">Zufriedene Kunden</h5>
               <span>
-                Wir haben Tausenden von Kunden geholfen, ihre Energieziele zu erreichen und ihre Energiekosten zu senken.
+                Wir haben 100% von Kunden geholfen, ihre Energieziele zu erreichen und ihre Energiekosten zu senken.
               </span>
             </div>
             <div className="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
@@ -52,12 +52,12 @@ export default function About() {
                   <i className="fa fa-check text-white" />
                 </div>
                 <h1 className="mb-0" data-toggle="counter-up">
-                  4234
+                  227
                 </h1>
               </div>
               <h5 className="mb-3">Abgeschlossene Projekte</h5>
               <span>
-                Unsere Erfahrung zeigt sich in der erfolgreichen Umsetzung von mehr als 4.000 Projekten im Bereich Solar- und erneuerbare Energien.
+                Unsere Erfahrung zeigt sich in der erfolgreichen Umsetzung von mehr als 226 Projekten im Bereich Solar- und erneuerbare Energien.
               </span>
             </div>
             <div className="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
@@ -66,7 +66,7 @@ export default function About() {
                   <i className="fa fa-award text-white" />
                 </div>
                 <h1 className="mb-0" data-toggle="counter-up">
-                  3123
+                  17
                 </h1>
               </div>
               <h5 className="mb-3">Gewonnene Auszeichnungen</h5>
@@ -80,12 +80,12 @@ export default function About() {
                   <i className="fa fa-users-cog text-white" />
                 </div>
                 <h1 className="mb-0" data-toggle="counter-up">
-                  1831
+                 6
                 </h1>
               </div>
               <h5 className="mb-3">Fachkundige Mitarbeiter</h5>
               <span>
-                Unser Team besteht aus über 1.800 hochqualifizierten Experten, die stets an der Spitze der Branche stehen.
+                Unser Team besteht aus über 6 hochqualifizierten Experten, die stets an der Spitze der Branche stehen.
               </span>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function About() {
               <div className="p-lg-5 pe-lg-0">
                 <h6 className="text-primary">Über uns</h6>
                 <h1 className="mb-4">
-                  Über 25 Jahre Erfahrung in der Solar- und erneuerbaren Energiewirtschaft
+                  Über 10 Jahre Erfahrung in der Solar- und erneuerbaren Energiewirtschaft
                 </h1>
                 <p>
                   Seit mehr als zwei Jahrzehnten setzen wir uns dafür ein, die Welt mit erneuerbaren Energien zu versorgen. Wir bieten innovative Lösungen, um Energieeffizienz zu steigern, die Umwelt zu schützen und den Energiebedarf unserer Kunden auf nachhaltige Weise zu decken.
