@@ -89,7 +89,7 @@ export default function Page() {
           </svg>
         </div>
         <h4>Energiekosten sparen</h4>
-        <p>Unsere Kunden sparen bis zu 50 % bei ihren Stromrechnungen.</p>
+        <p>Unsere Kunden sparen bis zu 80% bei ihren Stromrechnungen.</p>
       </div>
       <div className="col-md-3 col-sm-6 mb-3 mb-md-0">
         <div className="mb-3">
@@ -122,7 +122,7 @@ export default function Page() {
           </svg>
         </div>
         <h4>Kundenzufriedenheit</h4>
-        <p>Schließen Sie sich Tausenden von zufriedenen Solarhaushalten an.</p>
+        <p>Schließen Sie sich vielen glücklichen Solarhaushalten an.</p>
       </div>
       <div className="col-md-3 col-sm-6">
         <div className="mb-3">
