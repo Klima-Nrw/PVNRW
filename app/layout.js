@@ -42,8 +42,8 @@ export default function RootLayout({ children }) {
   className="btn btn-primary rounded-circle d-md-none back-to-top"
   style={{
     
-    width: '65px',
-    height: '65px',
+    width: '70px',
+    height: '70px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
