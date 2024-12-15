@@ -65,10 +65,6 @@ export default function About() {
   <p className="mb-4">Inhaltlich Verantwortlicher gemäß § 55 Abs. 2 RStV: Alexander  Zittel ( wie oben )</p>
 
 
- {/* Registereintrag */}
- <h3 className="h5 fw-semibold mb-2">Registereintrag</h3>
-  <p className="mb-4">Amtsgericht Gelsenkirchen HRB 16563</p>
-
   {/* Alternative Streitbeilegung */}
   <h3 className="h5 fw-semibold mb-2">Alternative Streitbeilegung</h3>
   <p>
