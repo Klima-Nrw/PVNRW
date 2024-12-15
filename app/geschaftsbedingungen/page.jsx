@@ -5,7 +5,7 @@ import Link from "next/link"
 export default function About() {
   return (
     <>
-      <title>Impressum | PVNRW</title>
+      <title>geschaftsbedingungen | PVNRW</title>
       <Headers />
       <div className="container mx-auto mt-3 py-3 bg-white text-start" style={{ minHeight: '1vh' }}>
   <h2 className="display-4 fw-bold mb-4">Allgemeine Geschäftsbedingungen (AGB)</h2>
