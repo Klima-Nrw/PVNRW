@@ -1,7 +1,6 @@
 "use client";
 import dynamic from 'next/dynamic'
 import Link from 'next/link';
-import Image from 'next/image';
 
 
 
@@ -21,7 +20,7 @@ export default function Page() {
   />
   <meta name="author" content="PV NRW" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+ 
   <meta name="language" content="de" />
 <section className="py-5 bg-light">
   <div className="container">
@@ -39,13 +38,10 @@ export default function Page() {
         </Link>
       </div>
       <div className="col-lg-6">
-      <Image
+      <img
   alt="Solarpanele"
   className="img-fluid"
-  src="/img/hero-image.webp"
-  layout="responsive"
-  width={600}
-  height={400}
+  src="img/hero-image.jpg"
 />
 
       </div>
