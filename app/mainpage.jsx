@@ -20,6 +20,7 @@ export default function Page() {
   />
   <meta name="author" content="PV NRW" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <meta name="language" content="de" />
 <section className="py-5 bg-light">
   <div className="container">
@@ -37,11 +38,12 @@ export default function Page() {
         </Link>
       </div>
       <div className="col-lg-6">
-        <img
-          alt="Solarpanele"
-          className="img-fluid"
-          src="img/carousel-2.jpg"
-        />
+      <img
+  alt="Solarpanele"
+  className="img-fluid"
+  src="img/hero-image.webp"
+/>
+
       </div>
     </div>
     <div className="row mt-5">
