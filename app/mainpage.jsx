@@ -42,6 +42,7 @@ export default function Page() {
   alt="Solarpanele"
   className="img-fluid"
   src="img/hero-image.jpg"
+   loading="lazy"
 />
 
       </div>
@@ -133,7 +134,8 @@ export default function Page() {
               className="img-fluid w-100 h-100"
               src="img/about.png"
               style={{ objectFit: "cover" }}
-              alt=""
+              alt="uber aus"
+               loading="lazy"
             />
           </div>
         </div>
@@ -340,6 +342,7 @@ export default function Page() {
         src="img/feature.jpg"
         style={{ objectFit: "cover" }}
         alt="Solar Installation Services"
+         loading="lazy"
       />
     </div>
   </div>
@@ -374,6 +377,8 @@ export default function Page() {
         src="img/recentwork-1.jpg"
         alt="Solaranlage Installation auf Dach"
         style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+         loading="lazy"
+
       />
       <div className="portfolio-btn">
         <a
@@ -393,6 +398,7 @@ export default function Page() {
         src="img/recentwork-2.jpg"
         alt="Solaranlage auf Flachdach"
         style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+         loading="lazy"
       />
       <div className="portfolio-btn">
         <a
@@ -412,6 +418,7 @@ export default function Page() {
         src="img/recentwork-3.jpg"
         alt="Solarwartung auf Dach"
         style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+         loading="lazy"
       />
       <div className="portfolio-btn">
         <a
@@ -439,6 +446,7 @@ export default function Page() {
         src="img/recentwork-4.jpg"
         alt="Solaranlage Installation auf Dach"
         style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+         loading="lazy"
       />
       <div className="portfolio-btn">
         <a
@@ -458,6 +466,7 @@ export default function Page() {
         src="img/recentwork-5.jpg"
         alt="Solaranlage auf Flachdach"
         style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+         loading="lazy"
       />
       <div className="portfolio-btn">
         <a
@@ -477,6 +486,7 @@ export default function Page() {
         src="img/recentwork-6.jpg"
         alt="Solarwartung auf Dach"
         style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+         loading="lazy"
       />
       <div className="portfolio-btn">
         <a
