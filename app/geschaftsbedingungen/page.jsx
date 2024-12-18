@@ -6,6 +6,14 @@ export default function About() {
   return (
     <>
       <title>geschaftsbedingungen | PVNRW</title>
+      <meta
+    name="description"
+    content="Sehen Sie sich die Geschäftsbedingungen von PV NRW für Solarenergie-Dienstleistungen in Nordrhein-Westfalen an. Klare und transparente Richtlinien für Ihr Vertrauen."
+  />
+  <meta
+    name="keywords"
+    content="PV NRW Geschäftsbedingungen, Richtlinien für Solardienstleistungen, Photovoltaik-Bedingungen NRW"
+  />
       <Headers />
       <div className="container mx-auto mt-3 py-3 bg-white text-start" style={{ minHeight: '1vh' }}>
   <h2 className="display-4 fw-bold mb-4">Allgemeine Geschäftsbedingungen (AGB)</h2>

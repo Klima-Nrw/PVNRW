@@ -115,7 +115,7 @@ export default function Footer() {
           <div className="copyright">
             <div className="row">
               <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                © <a href="#">PVNRW</a>, Alle Rechte vorbehalten.
+                © <Link href="/">PVNRW</Link>, Alle Rechte vorbehalten.
               </div>
               <div className="col-md-6 text-center text-md-end mb-3 mb-md-0">
               <Link href="/geschaftsbedingungen" className="text-decoration-none me-3">

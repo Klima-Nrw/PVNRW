@@ -6,6 +6,14 @@ export default function About() {
   return (
     <>
       <title>Impressum | PVNRW</title>
+      <meta
+    name="description"
+    content="Rechtliche Informationen zu PV NRW, Ihrem Partner für Solarenergie-Lösungen in Nordrhein-Westfalen. Sehen Sie unsere Firmendetails und Kontaktdaten."
+  />
+  <meta
+    name="keywords"
+    content="PV NRW rechtliche Informationen, Impressum, Firmendetails, Photovoltaik NRW"
+  />
       <Headers />
       <div className="container mx-auto mt-3 py-3 bg-white text-start" style={{ minHeight: '1vh' }}>
   <h2 className="display-4 fw-bold mb-4">Impressum</h2>

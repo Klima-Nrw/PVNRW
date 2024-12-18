@@ -55,7 +55,15 @@ export default function About() {
 
   return (
     <>
-      <title>Kontaktieren Sie uns | Solarsysteme</title>
+      <title>Kontaktieren Sie uns | PVNRW</title>
+      <meta
+    name="description"
+    content="Kontaktieren Sie PV NRW für Ihre Fragen rund um Solarenergie. Wir helfen Ihnen gerne weiter und begleiten Sie auf dem Weg zu Ihrer eigenen Solaranlage."
+  />
+  <meta
+    name="keywords"
+    content="Kontakt PV NRW, Solarenergie-Anfragen, Photovoltaik-Support NRW"
+  />
       <Headers />
 
       <div className="container-fluid page-header py-5 mb-5">

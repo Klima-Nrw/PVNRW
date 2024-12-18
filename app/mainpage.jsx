@@ -7,50 +7,20 @@ import Link from 'next/link';
 export default function Page() {
   return (
     <>
-  {/* <section className="bg-primary h-100">
-    <div className="container-fluid overflow-hidden">
-      <div className="row">
-        <div className="col-12 col-md-6 order-1 order-md-0 align-self-md-end">
-          <div className="row py-3 py-sm-5 py-xl-9 mt-md-10 justify-content-sm-center">
-            <div className="col-12 col-sm-10">
-              <h2 className="display-2 fw-bolder mb-4 text-white">
-                We Offer Modern Web Solutions
-              </h2>
-              <div className="row">
-                <div className="col-12 col-xxl-8">
-                  <p className="fs-5 mb-5 text-white">
-                    We work in a customized way by devising and handling
-                    entirely online projects with long-term partnerships.
-                  </p>
-                </div>
-              </div>
-              <div className="d-grid gap-2 d-sm-flex">
-                <button
-                  type="button"
-                  className="btn btn-warning bsb-btn-2xl rounded-pill"
-                >
-                  Explore Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-md-6 p-0">
-          <img
-            className="img-fluid  w-100 h-100 object-cover"
-            loading="lazy"
-            src="img/carousel-2.jpg"
-            alt="We Offer Modern Web Solutions"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  About Start */}
+  
 
 <title>PVNrw | Wir installieren Solaranlagen</title>
+<meta
+    name="description"
+    content="PV NRW – Ihr Experte für Photovoltaik-Lösungen in Nordrhein-Westfalen. Wir bieten maßgeschneiderte Solaranlagen für Privat- und Gewerbekunden, um eine nachhaltige Energiezukunft zu schaffen."
+  />
+  <meta
+    name="keywords"
+    content="Photovoltaik, Solaranlagen, erneuerbare Energien, Solarstrom, Nordrhein-Westfalen, PV NRW"
+  />
+  <meta name="author" content="PV NRW" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="language" content="de" />
 <section className="py-5 bg-light">
   <div className="container">
     <div className="row align-items-center">
@@ -310,7 +280,7 @@ export default function Page() {
         Wir sind spezialisiert auf Auf-Dach- und Flächeninstallationen von Solarmodulen und bieten maßgeschneiderte Lösungen für Gewerbe- und Wohngebäude. Unser Expertenteam sorgt mit professionellen Wartungsdiensten dafür, dass Ihr Solarsystem über Jahre hinweg optimal funktioniert.
       </p>
       <div className="row g-4">
-        <div className="col-6">
+        <div className="col-md-6 col-sm-6">
           <div className="d-flex align-items-center">
             <div className="btn-lg-square bg-primary rounded-circle">
               <i className="fa fa-check text-white" />
@@ -321,7 +291,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-md-6 col-sm-6">
           <div className="d-flex align-items-center">
             <div className="btn-lg-square bg-primary rounded-circle">
               <i className="fa fa-users-cog text-white" />
@@ -332,7 +302,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-md-6 col-sm-6">
           <div className="d-flex align-items-center">
             <div className="btn-lg-square bg-primary rounded-circle">
               <i className="fa fa-cogs text-white" />
@@ -343,7 +313,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-md-6 col-sm-6">
           <div className="d-flex align-items-center">
             <div className="btn-lg-square bg-primary rounded-circle">
               <i className="fa fa-headphones-alt text-white" />
@@ -390,107 +360,135 @@ export default function Page() {
       Entdecken Sie unsere neuesten Installationen von Solaranlagen auf Dächern und Flachdächern
     </h1>
   </div>      
+ 
   <div
-    className="row g-4 mt-4 portfolio-container wow fadeInUp"
-    data-wow-delay="0.5s"
-  >
-    <div className="col-lg-4 col-md-6 portfolio-item first">
-      <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/recentwork-4.jpg" alt="Solaranlage Installation auf Dach" />
-        <div className="portfolio-btn">
-          <a
-            className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/recentwork-4.jpg"
-            data-lightbox="portfolio"
-          >
-            <i className="fa fa-eye" />
-          </a>
-        </div>
+  className="row g-4 portfolio-container wow fadeInUp"
+  data-wow-delay="0.5s"
+>
+  <div className="col-lg-4 col-md-6 portfolio-item first">
+    <div className="portfolio-img rounded overflow-hidden">
+      <img
+        className="img-fluid"
+        src="img/recentwork-1.jpg"
+        alt="Solaranlage Installation auf Dach"
+        style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+      />
+      <div className="portfolio-btn">
+        <a
+          className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+          href="img/recentwork-1.jpg"
+          data-lightbox="portfolio"
+        >
+          <i className="fa fa-eye"></i>
+        </a>
       </div>
-     
-    </div>
-    <div className="col-lg-4 col-md-6 portfolio-item second">
-      <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/recentwork-5.jpg" alt="Solaranlage auf Flachdach" />
-        <div className="portfolio-btn">
-          <a
-            className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/recentwork-5.jpg"
-            data-lightbox="portfolio"
-          >
-            <i className="fa fa-eye" />
-          </a>
-        </div>
-      </div>
-      
-    </div>
-    <div className="col-lg-4 col-md-6 portfolio-item third">
-      <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/recentwork-1.jpg" alt="Solarwartung auf Dach" />
-        <div className="portfolio-btn">
-          <a
-            className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/recentwork-1.jpg"
-            data-lightbox="portfolio"
-          >
-            <i className="fa fa-eye" />
-          </a>
-        </div>
-      </div>
-     
     </div>
   </div>
+  <div className="col-lg-4 col-md-6 portfolio-item second">
+    <div className="portfolio-img rounded overflow-hidden">
+      <img
+        className="img-fluid"
+        src="img/recentwork-2.jpg"
+        alt="Solaranlage auf Flachdach"
+        style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+      />
+      <div className="portfolio-btn">
+        <a
+          className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+          href="img/recentwork-2.jpg"
+          data-lightbox="portfolio"
+        >
+          <i className="fa fa-eye"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div className="col-lg-4 col-md-6 portfolio-item third">
+    <div className="portfolio-img rounded overflow-hidden">
+      <img
+        className="img-fluid"
+        src="img/recentwork-3.jpg"
+        alt="Solarwartung auf Dach"
+        style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+      />
+      <div className="portfolio-btn">
+        <a
+          className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+          href="img/recentwork-3.jpg"
+          data-lightbox="portfolio"
+        >
+          <i className="fa fa-eye"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
   <div
-    className="row g-4 mt-4 portfolio-container wow fadeInUp"
-    data-wow-delay="0.5s"
-  >
-    <div className="col-lg-4 col-md-6 portfolio-item first">
-      <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/recentwork-3.jpg" alt="Solaranlage Installation auf Dach" />
-        <div className="portfolio-btn">
-          <a
-            className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/recentwork-3.jpg"
-            data-lightbox="portfolio"
-          >
-            <i className="fa fa-eye" />
-          </a>
-        </div>
+  className="row g-4 mt-4 portfolio-container wow fadeInUp"
+  data-wow-delay="0.5s"
+>
+  <div className="col-lg-4 col-md-6 portfolio-item first">
+    <div className="portfolio-img rounded overflow-hidden">
+      <img
+        className="img-fluid"
+        src="img/recentwork-4.jpg"
+        alt="Solaranlage Installation auf Dach"
+        style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+      />
+      <div className="portfolio-btn">
+        <a
+          className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+          href="img/recentwork-4.jpg"
+          data-lightbox="portfolio"
+        >
+          <i className="fa fa-eye"></i>
+        </a>
       </div>
-     
-    </div>
-    <div className="col-lg-4 col-md-6 portfolio-item second">
-      <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/recentwork-2.jpg" alt="Solaranlage auf Flachdach" />
-        <div className="portfolio-btn">
-          <a
-            className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/recentwork-2.jpg"
-            data-lightbox="portfolio"
-          >
-            <i className="fa fa-eye" />
-          </a>
-        </div>
-      </div>
-      
-    </div>
-    <div className="col-lg-4 col-md-6 portfolio-item third">
-      <div className="portfolio-img rounded overflow-hidden">
-        <img className="img-fluid" src="img/recentwork-9.jpg" alt="Solarwartung auf Dach" />
-        <div className="portfolio-btn">
-          <a
-            className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
-            href="img/recentwork-9.jpg"
-            data-lightbox="portfolio"
-          >
-            <i className="fa fa-eye" />
-          </a>
-        </div>
-      </div>
-     
     </div>
   </div>
+  <div className="col-lg-4 col-md-6 portfolio-item second">
+    <div className="portfolio-img rounded overflow-hidden">
+      <img
+        className="img-fluid"
+        src="img/recentwork-5.jpg"
+        alt="Solaranlage auf Flachdach"
+        style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+      />
+      <div className="portfolio-btn">
+        <a
+          className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+          href="img/recentwork-5.jpg"
+          data-lightbox="portfolio"
+        >
+          <i className="fa fa-eye"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div className="col-lg-4 col-md-6 portfolio-item third">
+    <div className="portfolio-img rounded overflow-hidden">
+      <img
+        className="img-fluid"
+        src="img/recentwork-6.jpg"
+        alt="Solarwartung auf Dach"
+        style={{ objectFit: 'cover', width: '100%', height: '300px' }}
+      />
+      <div className="portfolio-btn">
+        <a
+          className="btn btn-lg-square btn-outline-light rounded-circle mx-1"
+          href="img/recentwork-6.jpg"
+          data-lightbox="portfolio"
+        >
+          <i className="fa fa-eye"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
 
 </div>

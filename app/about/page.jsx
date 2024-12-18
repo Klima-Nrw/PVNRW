@@ -6,6 +6,14 @@ export default function About() {
   return (
     <>
       <title>Über uns | PVNRW</title>
+      <meta
+    name="description"
+    content="Erfahren Sie mehr über PV NRW, Ihren vertrauenswürdigen Partner für erneuerbare Energielösungen in Nordrhein-Westfalen. Entdecken Sie unsere Mission und Expertise im Bereich Solarenergie."
+  />
+  <meta
+    name="keywords"
+    content="Über PV NRW, erneuerbare Energielösungen, Solarenergie-Experten, Photovoltaik NRW"
+  />
       <Headers />
       {/* Page Header Start */}
       <div className="container-fluid page-header py-5 mb-5">

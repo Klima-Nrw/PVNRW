@@ -50,7 +50,15 @@ export default function About() {
 
   return (
     <>
-      <title>Kostenloses Angebot | Solarsysteme</title>
+      <title>Kostenloses Angebot | PVNRW</title>
+      <meta
+    name="description"
+    content="Fordern Sie ein individuelles Angebot für Ihr Solarsystem von PV NRW an. Schnell, einfach und auf Ihre Bedürfnisse zugeschnitten."
+  />
+  <meta
+    name="keywords"
+    content="Solarenergie-Angebot, individuelles Photovoltaik-Angebot, PV NRW Angebot anfordern"
+  />
       <Headers />
       <div className="container-fluid page-header py-5 mb-5">
         <div className="container py-5">
