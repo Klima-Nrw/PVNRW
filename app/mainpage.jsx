@@ -1,6 +1,7 @@
 "use client";
 import dynamic from 'next/dynamic'
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 
@@ -38,10 +39,13 @@ export default function Page() {
         </Link>
       </div>
       <div className="col-lg-6">
-      <img
+      <Image
   alt="Solarpanele"
   className="img-fluid"
-  src="img/hero-image.webp"
+  src="/img/hero-image.webp"
+  layout="responsive"
+  width={600}
+  height={400}
 />
 
       </div>

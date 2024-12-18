@@ -7,8 +7,7 @@ export default function Headerspage() {
     <>
       {/* Topbar Start */}
     
-  <link rel="preload" href="img/hero-image.webp" as="image" />
-    
+
       <div className="container-fluid bg-dark p-0">
         <div className="row gx-0 d-none d-lg-flex">
           <div className="col-lg-7 px-5 text-start">
