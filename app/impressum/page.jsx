@@ -62,7 +62,7 @@ export default function About() {
 
   {/* Registereintrag */}
   <h3 className="h5 fw-semibold mb-2">Registereintrag</h3>
-  <p className="mb-4">Amtsgericht Gelsenkirchen HRB folgt</p>
+  <p className="mb-4">Amtsgericht Gelsenkirchen Registrierung im Handelsregister in Bearbeitung</p>
 
   {/* Zuständige Kammer */}
   <h3 className="h5 fw-semibold mb-2 mt-4">Zuständige Kammer</h3>
