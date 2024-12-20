@@ -532,9 +532,7 @@ export default function Page() {
       <h6 className="text-primary">Kostenloses Angebot</h6>
       <h1 className="mb-4">Holen Sie sich ein kostenloses Angebot</h1>
       <p className="mb-4 pb-2">
-        Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-        diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-        lorem sit clita duo justo erat amet.
+       Haben Sie Fragen oder benötigen Sie Hilfe? Kontaktieren Sie uns jederzeit. Wir sind bestrebt, Ihnen die Unterstützung zu bieten, die Sie zum Erreichen Ihrer Ziele benötigen..
       </p>
       <form>
         <div className="row g-3">
