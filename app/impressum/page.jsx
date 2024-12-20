@@ -22,10 +22,8 @@ export default function About() {
   {/* Filiale Dorsten */}
   <h3 className="h5 fw-semibold mb-2">Filiale Dorsten</h3>
   <address className="fst-normal mb-4">
-    <p>Klimanrw GmbH</p>
-    <p>Wischenstück 30</p>
-    <p>46286 Dorsten</p>
-    <p>Deutschland</p>
+    <p>Pvnrw</p>
+    <p>By Photovoltail</p>
   </address>
 
   {/* Kontakt */}
