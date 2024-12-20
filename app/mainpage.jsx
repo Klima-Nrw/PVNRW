@@ -131,13 +131,12 @@ Mit unseren hochwertigen Photovoltaik-Lösungen, Solaranlagen und Solarstrom-Sys
           style={{ minHeight: 400 }}
         >
           <div className="position-relative h-100">
-            <img
-              className="img-fluid w-100 h-100"
-              src="img/about.png"
-              style={{ objectFit: "cover" }}
-              alt="uber aus"
-               loading="lazy"
-            />
+   <img
+  className="img-fluid w-100 h-100 img-cover"
+  src="img/about.png"
+  alt="uber aus"
+  loading="lazy"
+/>
           </div>
         </div>
         <div
