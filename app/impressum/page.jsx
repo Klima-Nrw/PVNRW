@@ -23,7 +23,7 @@ export default function About() {
   <h3 className="h5 fw-semibold mb-2">Filiale Dorsten</h3>
   <address className="fst-normal mb-4">
     <p>Pvnrw</p>
-    <p>By Photovoltail</p>
+    <p>By photovoltaik Zitte</p>
   </address>
 
   {/* Kontakt */}
