@@ -211,7 +211,7 @@ Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unter
           <p>
             Unsere Auf-Dach-Solaranlagen sorgen für eine optimale Energieerfassung und bieten die beste Effizienz für Ihr Zuhause oder Unternehmen.
           </p>
-          <Link className="small fw-medium" href="/about">
+          <Link className="small fw-medium" href="/service">
             Mehr Erfahren
             <i className="fa fa-arrow-right ms-2" />
           </Link>
