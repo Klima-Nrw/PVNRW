@@ -27,11 +27,12 @@ export default function Page() {
     <div className="row align-items-center">
       <div className="col-lg-6 mb-4 mb-lg-0">
         <h1 className="display-3 fw-bold">
-       Verkauf, Montage, Reinigung {" "}
-          <span className="text-primary">Alles aus einer Hand !</span>
+       Alles aus einer Hand {" "}
+          <span className="text-primary">Verkauf, Montage und Reinigung von Solaranlagen</span>
         </h1>
         <p className="lead my-4">
-          Reduzieren Sie Ihre Stromkosten und leisten Sie einen Beitrag zu einer sauberen, grüneren Zukunft mit unseren hochwertigen Solarpanel-Lösungen.
+         Reduzieren Sie Ihre Stromkosten und leisten Sie einen aktiven Beitrag für eine saubere, grüne Zukunft!
+Mit unseren hochwertigen Photovoltaik-Lösungen, Solaranlagen und Solarstrom-Systemen profitieren Sie von nachhaltiger Energie, einer kosteneffizienten Stromversorgung und einem umfassenden, kompetenten Service. Wir sind Ihr Partner für erneuerbare Energien, von der Planung über die Installation von Photovoltaikanlagen bis hin zur professionellen Wartung und Reinigung
         </p>
         <Link className="btn btn-lg btn-primary" href="/service">
           Mehr erfahren
@@ -62,7 +63,7 @@ export default function Page() {
           </svg>
         </div>
         <h4>Energiekosten sparen</h4>
-        <p>Unsere Kunden sparen bis zu 80% bei ihren Stromrechnungen.</p>
+        <p>Bis zu 80% weniger Stromkosten mit unseren Photovoltaikanlagen!</p>
       </div>
       <div className="col-md-3 col-sm-6 mb-3 mb-md-0">
         <div className="mb-3">
@@ -79,7 +80,7 @@ export default function Page() {
           </svg>
         </div>
         <h4>Experteninstallation</h4>
-        <p>Über ein Jahrzehnt Erfahrung in Solarenergie-Lösungen.</p>
+        <p>Mehr als 10 Jahre Erfahrung in Solarenergie-Lösungen und Photovoltaik-Installation!</p>
       </div>
       <div className="col-md-3 col-sm-6 mb-3 mb-md-0">
         <div className="mb-3">
@@ -95,7 +96,7 @@ export default function Page() {
           </svg>
         </div>
         <h4>Kundenzufriedenheit</h4>
-        <p>Schließen Sie sich vielen glücklichen Solarhaushalten an.</p>
+        <p>Werden Sie Teil unserer zufriedenen Solarhaushalte!</p>
       </div>
       <div className="col-md-3 col-sm-6">
         <div className="mb-3">
@@ -111,7 +112,7 @@ export default function Page() {
           </svg>
         </div>
         <h4>Umweltfreundlich</h4>
-        <p>Wir fördern nachhaltige Energie für eine bessere Zukunft.</p>
+        <p>Nachhaltige Energie für eine grünere Zukunft!</p>
       </div>
     </div>
   </div>
@@ -146,13 +147,14 @@ export default function Page() {
        <div className="p-lg-5 pe-lg-0">
   <h6 className="text-primary">Über Uns</h6>
   <h1 className="mb-4">
-    Über 10 Jahre Erfahrung in Solar- & Erneuerbare-Energien-Lösungen
+  Über 10 Jahre Erfahrung in Solar- und erneuerbaren Energien – Ihr Partner für nachhaltige Lösungen!
   </h1>
   <p>
-    Wir sind ein führender Anbieter von Solarenergie-Lösungen mit über 25 Jahren
-    Erfahrung in der Branche der erneuerbaren Energien. Unser Team widmet sich
-    der Aufgabe, erschwingliche und nachhaltige Solarenergie für Haushalte und
-    Unternehmen bereitzustellen.
+Mit über 10 Jahren Erfahrung in der erneuerbaren Energiebranche sind wir ein führender Anbieter von Solarenergie-Lösungen.
+Wir bieten: Effiziente und langlebige Solarmodule
+Individuelle Lösungen, perfekt auf Ihre Bedürfnisse abgestimmt
+Engagierten Service und eine reibungslose Installation
+Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unternehmen!
   </p>
   <p>
     <i className="fa fa-check-circle text-primary me-3" />
