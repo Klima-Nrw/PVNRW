@@ -27,7 +27,7 @@ export async function middleware(req) {
       return NextResponse.next(); // Allow access
     } else {
       // If country is not allowed, return a 403 response
-      return new NextResponse('Access denied. This site is only available in Germany, Pakistan, and the USA.', {
+      return new NextResponse('Access denied.\n This site is only available in Germany, Pakistan, and the USA.', {
         status: 403,
       });
     }
