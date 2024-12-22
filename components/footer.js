@@ -48,11 +48,11 @@ export default function Footer() {
   <Link href="/contact" className="btn btn-link">
     Kontakt
   </Link>
-  <Link href="/services" className="btn btn-link">
+  <Link href="/service" className="btn btn-link">
     Unsere Services
   </Link>
   <Link href="/project" className="btn btn-link">
-    AGB
+    Projekts
   </Link>
 
   <Link href="/" className="btn btn-link">

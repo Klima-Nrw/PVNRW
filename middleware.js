@@ -1,23 +1,33 @@
 import axios from 'axios';
 import { NextResponse } from 'next/server';
 
-const allowedCountries = ['DE', 'PK', 'USA']; // Country codes for Germany (DE) and Pakistan (PK and USA)
+const allowedCountries = ['DE', 'PK', 'USA']; // Country codes for Germany (DE), Pakistan (PK), and USA (USA)
 
-// Middleware function to check user's country
 export async function middleware(req) {
+  // Get the user's IP address from headers
   const ip = req.headers.get('x-forwarded-for') || req.ip;
+
+  // If the IP is from localhost, skip geolocation check
+  if (ip === '::1' || ip === '127.0.0.1') {
+    console.log('Running locally, skipping country check.');
+    return NextResponse.next(); // Allow the request to continue
+  }
+
+  console.log(`User IP: ${ip}`);
 
   try {
     // Fetch user location using ipinfo.io
     const response = await axios.get(`https://ipinfo.io/${ip}/json`);
     const userCountry = response.data.country;
 
+    console.log(`User Country: ${userCountry}`);
+
     // Check if the user's country is allowed
     if (allowedCountries.includes(userCountry)) {
       return NextResponse.next(); // Allow access
     } else {
       // If country is not allowed, return a 403 response
-      return new NextResponse('Access denied. This site is only available in Germany and the United States.', {
+      return new NextResponse('Access denied. This site is only available in Germany, Pakistan, and the USA.', {
         status: 403,
       });
     }
@@ -27,7 +37,7 @@ export async function middleware(req) {
   }
 }
 
-// Middleware configuration to apply to specific paths
+// Middleware configuration to apply to all routes
 export const config = {
-  matcher: ['/'], // Apply this middleware to the homepage or any route you want
+  matcher: ['/'],
 };
