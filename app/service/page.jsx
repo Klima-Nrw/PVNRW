@@ -156,10 +156,13 @@ import Link from "next/link";
     <div className="p-lg-5 ps-lg-0">
       <h6 className="text-primary">Warum Uns Wählen!</h6>
       <h1 className="mb-4">
-        Ihr Vertrauenspartner für Solarmodulinstallation & Wartung
+       Ihr Vertrauenspartner
+        Für Solarmodulinstallation und Wartung – zuverlässig und professionell!
       </h1>
       <p className="mb-4 pb-2">
-        Wir sind spezialisiert auf Auf-Dach- und Flächeninstallationen von Solarmodulen und bieten maßgeschneiderte Lösungen für Gewerbe- und Wohngebäude. Unser Expertenteam sorgt mit professionellen Wartungsdiensten dafür, dass Ihr Solarsystem über Jahre hinweg optimal funktioniert.
+        Spezialisiert auf Auf-Dach- und Flächeninstallationen von Solarmodulen, bieten wir individuelle Solarlösungen für Gewerbe- und Wohngebäude. Mit hochwertigen Photovoltaikanlagen,
+        effizienten Solarmodulen und zuverlässigen Wartungsdiensten sorgt unser Expertenteam dafür,
+        dass Ihr Solarstromsystem jahrelang optimal funktioniert. Wir sind Ihr Partner für erneuerbare Energien, nachhaltige Energieversorgung und kostensparende Solartechnik.
       </p>
       <div className="row g-4">
         <div className="col-md-6 col-sm-6">
@@ -220,6 +223,7 @@ import Link from "next/link";
         src="img/feature.jpg"
         style={{ objectFit: "cover" }}
         alt="Solar Installation Services"
+         loading="lazy"
       />
     </div>
   </div>

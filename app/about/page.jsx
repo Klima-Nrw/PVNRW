@@ -101,55 +101,66 @@ export default function About() {
       </div>
       {/* Feature End */}
       {/* About Start */}
-      <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-        <div className="container about px-lg-0">
-          <div className="row g-0 mx-lg-0">
-            <div
-              className="col-lg-6 ps-lg-0 wow fadeIn"
-              data-wow-delay="0.1s"
-              style={{ minHeight: 400 }}
-            >
-              <div className="position-relative h-100">
-                <img
-                  className="position-absolute img-fluid w-100 h-100"
-                    src="img/about.png"
-                  style={{ objectFit: "cover" }}
-                  alt="Über uns Bild"
-                />
-              </div>
-            </div>
-            <div
-              className="col-lg-6 about-text py-5 wow fadeIn"
-              data-wow-delay="0.5s"
-            >
-              <div className="p-lg-5 pe-lg-0">
-                <h6 className="text-primary">Über uns</h6>
-                <h1 className="mb-4">
-                  Über 10 Jahre Erfahrung in der Solar- und erneuerbaren Energiewirtschaft
-                </h1>
-                <p>
-                  Seit mehr als zwei Jahrzehnten setzen wir uns dafür ein, die Welt mit erneuerbaren Energien zu versorgen. Wir bieten innovative Lösungen, um Energieeffizienz zu steigern, die Umwelt zu schützen und den Energiebedarf unserer Kunden auf nachhaltige Weise zu decken.
-                </p>
-                <p>
-                  <i className="fa fa-check-circle text-primary me-3" />
-                  Langjährige Erfahrung in der Branche
-                </p>
-                <p>
-                  <i className="fa fa-check-circle text-primary me-3" />
-                  Innovative Lösungen für nachhaltige Energie
-                </p>
-                <p>
-                  <i className="fa fa-check-circle text-primary me-3" />
-                  Kundenorientierter Service und höchste Qualitätsstandards
-                </p>
-                <Link href="/contact" className="btn btn-primary rounded-pill py-3 px-5 mt-3">
-                  Kontaktieren Sie uns
-                </Link>
-              </div>
-            </div>
+      
+  <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+    <div className="container about px-lg-0">
+      <div className="row g-0 mx-lg-0">
+        <div
+          className="col-lg-6 ps-lg-0 wow fadeIn"
+          data-wow-delay="0.1s"
+          style={{ minHeight: 400 }}
+        >
+          <div className="position-relative h-100">
+   <img
+  className="img-fluid w-100 h-100 img-cover"
+  src="img/about.png"
+  alt="uber aus"
+  loading="lazy"
+/>
           </div>
         </div>
+        <div
+          className="col-lg-6 about-text py-5 wow fadeIn"
+          data-wow-delay="0.5s"
+        >
+       <div className="p-lg-5 pe-lg-0">
+  <h6 className="text-primary">Über Uns</h6>
+  <h1 className="mb-4">
+  Über 10 Jahre Erfahrung in Solar- und erneuerbaren Energien – Ihr Partner für nachhaltige Lösungen!
+  </h1>
+  <p>
+Mit über 10 Jahren Erfahrung in der erneuerbaren Energiebranche sind wir ein führender Anbieter von Solarenergie-Lösungen.
+Wir bieten: Effiziente und langlebige Solarmodule
+Individuelle Lösungen, perfekt auf Ihre Bedürfnisse abgestimmt
+Engagierten Service und eine reibungslose Installation
+Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unternehmen!
+  </p>
+  <p>
+    <i className="fa fa-check-circle text-primary me-3" />
+    Hochwertige Solarmodule, entwickelt für Effizienz und Langlebigkeit
+  </p>
+  <p>
+    <i className="fa fa-check-circle text-primary me-3" />
+    Individuelle Solar-Lösungen, abgestimmt auf Ihre Energiebedürfnisse
+  </p>
+  <p>
+    <i className="fa fa-check-circle text-primary me-3" />
+    Engagierter Kundenservice und ein nahtloser Installationsprozess
+  </p>
+  <Link
+    href="/service"
+    className="btn btn-primary rounded-pill py-3 px-5 mt-3"
+    title="Erfahren Sie mehr über unsere Solarenergie-Lösungen"
+  >
+    Mehr Erfahren
+  </Link>
+</div>
+
+
+        </div>
       </div>
+    </div>
+  </div>
       {/* About End */}
       <Footer />
       {/* Back to Top */}
