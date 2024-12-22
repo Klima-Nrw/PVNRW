@@ -20,7 +20,7 @@
 .back-to-top {
     position: fixed;
     display: none;
-    left: 45px;
+    left: 35px;
     bottom: 20px;
     z-index: 99;
 }

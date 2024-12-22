@@ -61,6 +61,18 @@ export default function Footer() {
  
 </div>
 
+            <div className="col-12 d-md-none d-md-inline text-center text-md-end ">
+              <Link href="/impressum" className="btn btn-link">
+                Impressum
+              </Link>
+              <Link href="/geschaftsbedingungen" className="btn btn-link">
+                Geschäftsbedingungen
+              </Link>
+              <Link href="/Datenschutzerklarung" className="btn btn-link">
+                Datenschutzerklärung
+              </Link>
+            </div>
+
             <div className="col-lg-4 col-md-6">
               <h5 className="text-white mb-4">Projekt Galerie</h5>
               <div className="row g-2">
@@ -114,22 +126,23 @@ export default function Footer() {
         <div className="container">
           <div className="copyright">
             <div className="row">
-              <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              <div className="col-md-4 text-center text-md-start mb-3 mb-md-0">
                 © <Link href="/">PVNRW</Link>, Alle Rechte vorbehalten.
               </div>
-              <div className="col-md-6 text-center text-md-end mb-3 mb-md-0">
 
-            <Link href="/impressum" className="text-decoration-none me-3">
-            Impressum 
-            </Link>
-            <Link href="/geschaftsbedingungen" className="text-decoration-none me-3">
-             Geschäftsbedingungen
-            </Link>
-            <Link href="/Datenschutzerklarung" className="text-decoration-none me-3">
-            Datenschutzerklärung
-            </Link>
-  
-              </div>
+              
+              <div className="col-md-8 d-none d-md-inline text-center text-md-end ">
+              <Link href="/impressum" className="text-decoration-none me-3">
+                Impressum
+              </Link>
+              <Link href="/geschaftsbedingungen" className="text-decoration-none me-3">
+                Geschäftsbedingungen
+              </Link>
+              <Link href="/Datenschutzerklarung" className="text-decoration-none me-3">
+                Datenschutzerklärung
+              </Link>
+            </div>
+
             </div>
           </div>
         </div>

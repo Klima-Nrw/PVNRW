@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     setIsNewUser(newUserFlag);
   }, []);
 
-  const pathname = usePathname(); // Ensure the hook is called correctly
+ const pathname = usePathname(); // Ensure the hook is called correctly
 
 
   useEffect(() => {
@@ -70,8 +70,8 @@ export default function RootLayout({ children }) {
   className="btn btn-primary rounded-circle d-md-none back-to-top"
   style={{
     
-    width: '75px',
-    height: '75px',
+    width: '65px',
+    height: '65px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -79,7 +79,7 @@ export default function RootLayout({ children }) {
     zIndex: 1000,
   }}
 >
-  <span className="text-white text-center" style={{ fontSize: '10px' }}>
+  <span className="text-white text-center" style={{ fontSize: '8px' }}>
     Kostenloses Angebot einholen
   </span>
 </Link>

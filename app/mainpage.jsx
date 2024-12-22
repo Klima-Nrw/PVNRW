@@ -26,14 +26,14 @@ export default function Page() {
   <div className="container">
     <div className="row align-items-center">
       <div className="col-lg-6 mb-4 mb-lg-0">
-      <h1 className="display-4 fw-bold">
+      <h1 className="display-4 fw-bold" >
   Alles aus einer Hand: <span className="text-primary">Verkauf, Montage & Reinigung von Solaranlagen</span>
 </h1>
-<p className="lead my-4">
-  Senken Sie Ihre Stromkosten und fördern Sie eine grüne Zukunft mit unseren erstklassigen Photovoltaik-Lösungen! 
-  Von der Planung über die Installation bis zur Wartung und Reinigung – wir bieten nachhaltige Solarenergie, 
-  effiziente Stromversorgung und erstklassigen Service. Ihr Partner für erneuerbare Energien!
+<p className="lead my-4" style={{fontSize: "20px"}}>
+  Senken Sie Ihre Stromkosten und fördern Sie eine grüne Zukunft mit unseren Photovoltaik-Lösungen. 
+  Wir bieten Planung, Installation und Wartung für nachhaltige Solarenergie und effiziente Stromversorgung.
 </p>
+
 
         <Link className="btn btn-lg btn-primary" href="/service">
           Mehr erfahren

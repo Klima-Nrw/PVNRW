@@ -23,7 +23,10 @@ const PrivacySlider = () => {
   }, []);
 
   return showConfirmation ? (
-    <div className="privacy-slider position-fixed bottom-0 start-0 w-100 bg-white p-3 border-top shadow-lg">
+    <div
+      className="privacy-slider position-fixed bottom-0 start-0 w-100 bg-white p-3 border-top shadow-lg"
+      style={{ zIndex: 999999 }}
+    >
       <div className="container text-center">
         <p className="mb-4">
           Diese Website nutzt Cookies und vergleichbare Funktionen zur
@@ -33,7 +36,7 @@ const PrivacySlider = () => {
           der personalisierten Werbung sowie der Einbindung sozialer Medien. 
           Ihre Einwilligung ist stets freiwillig und kann jederzeit auf unserer Seite abgelehnt oder widerrufen werden.
         </p>
-        <div className="d-flex justify-content-center gap-3">
+        <div className="d-flex flex-column flex-md-row justify-content-center gap-3">
           <button className="btn btn-primary px-4" onClick={handleAccept}>
             Akzeptieren
           </button>
