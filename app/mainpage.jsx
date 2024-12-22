@@ -26,14 +26,15 @@ export default function Page() {
   <div className="container">
     <div className="row align-items-center">
       <div className="col-lg-6 mb-4 mb-lg-0">
-        <h1 className="display-3 fw-bold">
-       Alles aus einer Hand {" "}
-          <span className="text-primary">Verkauf, Montage und Reinigung von Solaranlagen</span>
-        </h1>
-        <p className="lead my-4">
-         Reduzieren Sie Ihre Stromkosten und leisten Sie einen aktiven Beitrag für eine saubere, grüne Zukunft!
-Mit unseren hochwertigen Photovoltaik-Lösungen, Solaranlagen und Solarstrom-Systemen profitieren Sie von nachhaltiger Energie, einer kosteneffizienten Stromversorgung und einem umfassenden, kompetenten Service. Wir sind Ihr Partner für erneuerbare Energien, von der Planung über die Installation von Photovoltaikanlagen bis hin zur professionellen Wartung und Reinigung
-        </p>
+      <h1 className="display-4 fw-bold">
+  Alles aus einer Hand: <span className="text-primary">Verkauf, Montage & Reinigung von Solaranlagen</span>
+</h1>
+<p className="lead my-4">
+  Senken Sie Ihre Stromkosten und fördern Sie eine grüne Zukunft mit unseren erstklassigen Photovoltaik-Lösungen! 
+  Von der Planung über die Installation bis zur Wartung und Reinigung – wir bieten nachhaltige Solarenergie, 
+  effiziente Stromversorgung und erstklassigen Service. Ihr Partner für erneuerbare Energien!
+</p>
+
         <Link className="btn btn-lg btn-primary" href="/service">
           Mehr erfahren
         </Link>
@@ -52,15 +53,21 @@ Mit unseren hochwertigen Photovoltaik-Lösungen, Solaranlagen und Solarstrom-Sys
       <div className="col-md-3 col-sm-6 mb-3 mb-md-0">
         <div className="mb-3">
         <svg
-            className="bi bi-sun"
-            fill="currentColor"
-            height={48}
-            viewBox="0 0 16 16"
-            width={48}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.688-4.5h1.562a.5.5 0 0 1 0 1h-1.562a.5.5 0 0 1 0-1zm-9.376 0a.5.5 0 0 1 0 1H1.75a.5.5 0 0 1 0-1h1.562zM8 3.313a.5.5 0 0 1 1 0v1.562a.5.5 0 0 1-1 0V3.313zm0 9.376a.5.5 0 0 1 1 0v1.562a.5.5 0 0 1-1 0v-1.562zM11.597 5.025a.5.5 0 0 1 .707 0l1.104 1.104a.5.5 0 0 1-.707.707L11.597 5.732a.5.5 0 0 1 0-.707zm-7.194 7.194a.5.5 0 0 1 .707 0l1.104-1.104a.5.5 0 0 1-.707-.707L3.732 12.219a.5.5 0 0 1 0 .707zm7.194 1.104a.5.5 0 0 1-.707 0l-1.104-1.104a.5.5 0 0 1 .707-.707l1.104 1.104a.5.5 0 0 1 0 .707zm-7.194-7.194a.5.5 0 0 1-.707 0L2.195 4.732a.5.5 0 0 1 .707-.707L4.007 6.136a.5.5 0 0 1 0 .707z" />
-          </svg>
+  className="w-6 h-6 text-gray-800 dark:text-white"
+  aria-hidden="true"
+  xmlns="http://www.w3.org/2000/svg"
+  width={48}
+  height={48}
+  fill="currentColor"
+  viewBox="0 0 24 24"
+>
+  <path
+    fillRule="evenodd"
+    d="M13 3a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0V3ZM6.343 4.929A1 1 0 0 0 4.93 6.343l1.414 1.414a1 1 0 0 0 1.414-1.414L6.343 4.929Zm12.728 1.414a1 1 0 0 0-1.414-1.414l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-9 4a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2H3Zm16 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2ZM7.757 17.657a1 1 0 1 0-1.414-1.414l-1.414 1.414a1 1 0 1 0 1.414 1.414l1.414-1.414Zm9.9-1.414a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414ZM13 19a1 1 0 1 0-2 0v2a1 1 0 1 0 2 0v-2Z"
+    clipRule="evenodd"
+  />
+</svg>
+
         </div>
         <h4>Energiekosten sparen</h4>
         <p>Bis zu 80% weniger Stromkosten mit unseren Photovoltaikanlagen!</p>
@@ -80,7 +87,7 @@ Mit unseren hochwertigen Photovoltaik-Lösungen, Solaranlagen und Solarstrom-Sys
           </svg>
         </div>
         <h4>Experteninstallation</h4>
-        <p>Mehr als 10 Jahre Erfahrung in Solarenergie-Lösungen und Photovoltaik-Installation!</p>
+        <p>Über 10 Jahre Erfahrung in Solarenergie und Photovoltaik-Installation!</p>
       </div>
       <div className="col-md-3 col-sm-6 mb-3 mb-md-0">
         <div className="mb-3">
@@ -101,15 +108,17 @@ Mit unseren hochwertigen Photovoltaik-Lösungen, Solaranlagen und Solarstrom-Sys
       <div className="col-md-3 col-sm-6">
         <div className="mb-3">
         <svg
-            className="bi bi-tree"
-            fill="currentColor"
-            height={48}
-            viewBox="0 0 16 16"
-            width={48}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M8.416.223a.5.5 0 0 1 .168.677l-5.5 9.5a.5.5 0 0 1-.874-.01L6.327 6.04H4.59a.5.5 0 0 1-.4-.796l3.5-5a.5.5 0 0 1 .726-.021zm-.833 10.473l-3.5-6a.5.5 0 1 0-.865.502l3.5 6a.5.5 0 0 0 .865-.502zm.833-10.473l5.5 9.5a.5.5 0 0 1-.874.01L9.673 6.04H11.41a.5.5 0 0 1 .4.796l-3.5 5a.5.5 0 0 1-.726.021zm.833 10.473l3.5-6a.5.5 0 1 0-.865-.502l-3.5 6a.5.5 0 0 0 .865.502z" />
-          </svg>
+  className="w-6 h-6 text-gray-800 dark:text-white"
+  aria-hidden="true"
+  xmlns="http://www.w3.org/2000/svg"
+  width={48}
+  height={48}
+  fill="currentColor"
+  viewBox="0 0 24 24"
+>
+  <path d="M12.356 3.066a1 1 0 0 0-.712 0l-7 2.666A1 1 0 0 0 4 6.68a17.695 17.695 0 0 0 2.022 7.98 17.405 17.405 0 0 0 5.403 6.158 1 1 0 0 0 1.15 0 17.406 17.406 0 0 0 5.402-6.157A17.694 17.694 0 0 0 20 6.68a1 1 0 0 0-.644-.949l-7-2.666Z" />
+</svg>
+
         </div>
         <h4>Umweltfreundlich</h4>
         <p>Nachhaltige Energie für eine grünere Zukunft!</p>

@@ -118,12 +118,17 @@ export default function Footer() {
                 © <Link href="/">PVNRW</Link>, Alle Rechte vorbehalten.
               </div>
               <div className="col-md-6 text-center text-md-end mb-3 mb-md-0">
-              <Link href="/geschaftsbedingungen" className="text-decoration-none me-3">
-              Geschäftsbedingungen
-  </Link>
-  <Link href="/impressum" className="text-decoration-none">
-    Impressum
-  </Link>
+
+            <Link href="/impressum" className="text-decoration-none me-3">
+            Impressum 
+            </Link>
+            <Link href="/geschaftsbedingungen" className="text-decoration-none me-3">
+             Geschäftsbedingungen
+            </Link>
+            <Link href="/Datenschutzerklarung" className="text-decoration-none me-3">
+            Datenschutzerklärung
+            </Link>
+  
               </div>
             </div>
           </div>

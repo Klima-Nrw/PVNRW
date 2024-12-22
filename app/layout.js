@@ -1,7 +1,30 @@
+"use client";
+
 import Link from "next/link";
 import Script from 'next/script';
+import Privacybox from "../components/slider"
+import React, { useState, useEffect } from "react";
+
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({ children }) {
+
+  const [isNewUser, setIsNewUser] = useState(false);
+
+  useEffect(() => {
+    const newUserFlag = localStorage.getItem("PVNRWNewUser") !== "false";
+    setIsNewUser(newUserFlag);
+  }, []);
+
+  const pathname = usePathname(); // Ensure the hook is called correctly
+
+
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+  }, [pathname]); // Trigger when the pathname changes
+
+
   return (
     <html lang="en">
 <head>
@@ -9,7 +32,7 @@ export default function RootLayout({ children }) {
 
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   {/* Favicon */}
-  <link href="img/favicon.ico" rel="icon" />
+  <link href="/favicon.ico" rel="icon" />
   {/* Google Web Fonts */}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -34,10 +57,14 @@ export default function RootLayout({ children }) {
 </head>
 
       <body suppressHydrationWarning>
+        
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+      {isNewUser && <Privacybox />}
         {children}
 
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        
     <Link
   href="/quote"
   className="btn btn-primary rounded-circle d-md-none back-to-top"
@@ -75,6 +102,7 @@ export default function RootLayout({ children }) {
           })();
         `}
       </Script>
+
 
       </body>
     </html>
