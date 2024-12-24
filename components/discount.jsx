@@ -8,21 +8,21 @@ export default function ChristmasPopup() {
   const [successMessage, setSuccessMessage] = useState('');
   const [snowflakes, setSnowflakes] = useState([]);
   const [showBullet, setShowBullet] = useState(false);
+  const [loading, setLoading] = useState(false); // Loader state
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
     }, 10000);
 
-    // Generate multiple snowflakes
     const generateSnowflakes = () => {
       const flakes = [];
       for (let i = 0; i < 50; i++) {
         flakes.push({
           id: i,
-          left: Math.random() * window.innerWidth, // Random horizontal position
-          duration: Math.random() * 5 + 5, // Random fall duration between 5s to 10s
-          size: Math.random() * 10 + 10, // Random size between 10px to 20px
+          left: Math.random() * window.innerWidth,
+          duration: Math.random() * 5 + 5,
+          size: Math.random() * 10 + 10,
         });
       }
       setSnowflakes(flakes);
@@ -46,6 +46,7 @@ export default function ChristmasPopup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Show loader
     const phoneNumber = document.getElementById('phoneInput').value;
 
     try {
@@ -64,10 +65,13 @@ export default function ChristmasPopup() {
           handleClose();
         }, 5000); // Close popup after 5 seconds
       } else {
-        setSuccessMessage('Bitte versuchen Sie es später noch einmal.', response.statusText);
+        setSuccessMessage('Bitte versuchen Sie es später noch einmal.');
       }
     } catch (error) {
       console.error('Error:', error);
+      setSuccessMessage('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später.');
+    } finally {
+      setLoading(false); // Hide loader
     }
   };
 
@@ -89,8 +93,8 @@ export default function ChristmasPopup() {
                 <form id="phoneForm" onSubmit={handleSubmit}>
                   <label htmlFor="phoneInput">Geben Sie Ihre Handynummer ein:</label>
                   <input type="tel" id="phoneInput" required />
-                  <button type="submit" id="submitButton">
-                    Jetzt sichern
+                  <button type="submit" id="submitButton" disabled={loading}>
+                    {loading ? 'Wird gesendet...' : 'Jetzt sichern'}
                   </button>
                 </form>
               ) : (
@@ -127,4 +131,3 @@ export default function ChristmasPopup() {
     </>
   );
 }
-
