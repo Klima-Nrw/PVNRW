@@ -7,6 +7,7 @@ export default function ChristmasPopup() {
   const [show, setShow] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [snowflakes, setSnowflakes] = useState([]);
+  const [showBullet, setShowBullet] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,6 +36,12 @@ export default function ChristmasPopup() {
   const handleClose = () => {
     setShow(false);
     setSuccessMessage('');
+    setShowBullet(true);
+  };
+
+  const handleReopenPopup = () => {
+    setShow(true);
+    setShowBullet(false);
   };
 
   const handleSubmit = async (e) => {
@@ -64,46 +71,60 @@ export default function ChristmasPopup() {
     }
   };
 
-  if (!show) return null;
+  if (!show && !showBullet) return null;
 
   return (
-    <div id="christmasPopup" className="popup-overlay">
-      <div className="popup-content">
-        <button id="closeButton" onClick={handleClose}>
-          &times;
-        </button>
-        <h2 id="popupTitle">Weihnachtsgeschenk!</h2>
-        <div id="popupBody">
-          <h3 id="discountText">🎄 10% RABATT 🎄</h3>
-          <p id="offerText">bis 29. Dezember</p>
-          {!successMessage ? (
-            <form id="phoneForm" onSubmit={handleSubmit}>
-              <label htmlFor="phoneInput">Geben Sie Ihre Handynummer ein:</label>
-              <input type="tel" id="phoneInput" required />
-              <button type="submit" id="submitButton">
-              Jetzt sichern
-              </button>
-            </form>
-          ) : (
-            <p className="success-message">{successMessage}</p>
-          )}
-        </div>
-      </div>
+    <>
+      {show && (
+        <div id="christmasPopup" className="popup-overlay">
+          <div className="popup-content">
+            <button id="closeButton" onClick={handleClose}>
+              &times;
+            </button>
+            <h2 id="popupTitle">Weihnachtsgeschenk!</h2>
+            <div id="popupBody">
+              <h3 id="discountText">🎄 10% RABATT 🎄</h3>
+              <p id="offerText">bis 29. Dezember</p>
+              {!successMessage ? (
+                <form id="phoneForm" onSubmit={handleSubmit}>
+                  <label htmlFor="phoneInput">Geben Sie Ihre Handynummer ein:</label>
+                  <input type="tel" id="phoneInput" required />
+                  <button type="submit" id="submitButton">
+                    Jetzt sichern
+                  </button>
+                </form>
+              ) : (
+                <p className="success-message">{successMessage}</p>
+              )}
+            </div>
+          </div>
 
-      {/* Render snowflakes */}
-      {snowflakes.map((flake) => (
-        <div
-          key={flake.id}
-          className="snowflake"
-          style={{
-            left: `${flake.left}px`,
-            fontSize: `${flake.size}px`,
-            animationDuration: `${flake.duration}s`,
-          }}
-        >
-          ❄
+          {/* Render snowflakes */}
+          {snowflakes.map((flake) => (
+            <div
+              key={flake.id}
+              className="snowflake"
+              style={{
+                left: `${flake.left}px`,
+                fontSize: `${flake.size}px`,
+                animationDuration: `${flake.duration}s`,
+              }}
+            >
+              ❄
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      )}
+
+      {showBullet && (
+        <div id="bulletIcon" onClick={handleReopenPopup}>
+          <span>🎄</span>
+          <span>10%</span>
+          <span>RABATT</span>
+          <span>🎄</span>
+        </div>
+      )}
+    </>
   );
 }
+
