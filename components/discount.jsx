@@ -91,7 +91,7 @@ export default function ChristmasPopup() {
               <p id="offerText">bis 29. Dezember</p>
               {!successMessage ? (
                 <form id="phoneForm" onSubmit={handleSubmit}>
-                  <label htmlFor="phoneInput">Geben Sie Ihre Handynummer ein:</label>
+                  <label htmlFor="phoneInput">Geben Sie Ihre Handynummer für eine kostenlose Beratung ein:</label>
                   <input type="tel" id="phoneInput" required />
                   <button type="submit" id="submitButton" disabled={loading}>
                     {loading ? 'Wird gesendet...' : 'Jetzt sichern'}
