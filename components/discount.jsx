@@ -20,7 +20,7 @@ export default function ChristmasPopup() {
         flakes.push({
           id: i,
           left: Math.random() * window.innerWidth, // Random horizontal position
-          duration: Math.random() * 3 + 3, // Random fall duration between 5s to 10s
+          duration: Math.random() * 5 + 5, // Random fall duration between 5s to 10s
           size: Math.random() * 10 + 10, // Random size between 10px to 20px
         });
       }
