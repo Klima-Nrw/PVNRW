@@ -8,7 +8,7 @@ export async function middleware(req) {
   const ip = req.headers.get('x-forwarded-for') || req.ip;
 
   // If the IP is from localhost, skip geolocation check
-  if (ip === '::1' || ip === '127.0.0.1:3000') {
+  if (ip === '::1' || ip === 'localhost:3000') {
     console.log('Running locally, skipping country check.');
     return NextResponse.next(); // Allow the request to continue
   }

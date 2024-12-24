@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Script from 'next/script';
 import Privacybox from "../components/slider"
+import ChristmasPopup from '../components/discount';
 import React, { useState, useEffect } from "react";
 
 import { usePathname } from "next/navigation";
@@ -62,6 +63,8 @@ export default function RootLayout({ children }) {
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
       {isNewUser && <Privacybox />}
+
+      <ChristmasPopup />
         {children}
 
         
