@@ -41,13 +41,13 @@ export default function About() {
       const result = await response.json();
 
       if (response.ok) {
-        setStatusMessage('Message sent successfully!');
+        setStatusMessage('Anfrage erfolgreich gesendet!');
         setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
       } else {
-        setStatusMessage(result.message || 'Failed to send message');
+        setStatusMessage('Fehler beim Senden der Anfrage');
       }
     } catch (error) {
-      setStatusMessage('An error occurred. Please try again later.');
+      setStatusMessage('Ein Fehler ist aufgetreten.Ein Fehler ist aufgetreten..');
     } finally {
       setIsLoading(false); // Reset loading state
     }
