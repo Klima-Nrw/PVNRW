@@ -1,10 +1,52 @@
 "use client";
 import dynamic from 'next/dynamic'
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 
 
 export default function Page() {
+ const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    note: "",
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);  // Set loading state to true
+    setSuccessMessage("");  // Clear previous success message
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSuccessMessage("Anfrage erfolgreich gesendet!"); // Set success message
+        setFormData({ name: "", email: "", phone: "", service: "", note: "" });
+      } else {
+        setSuccessMessage("Fehler beim Senden der Anfrage.");
+      }
+    } catch (error) {
+      console.error(error);
+      setSuccessMessage("Ein Fehler ist aufgetreten.");
+    } finally {
+      setIsLoading(false); // Set loading state to false after request completes
+    }
+  };
 
 
   return (
@@ -549,66 +591,82 @@ Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unter
       <p className="mb-4 pb-2">
        Haben Sie Fragen oder benötigen Sie Hilfe? Kontaktieren Sie uns jederzeit. Wir sind bestrebt, Ihnen die Unterstützung zu bieten, die Sie zum Erreichen Ihrer Ziele benötigen..
       </p>
-      <form>
-        <div className="row g-3">
-          <div className="col-12 col-sm-6">
-            <input
-              type="text"
-              className="form-control border-0"
-              placeholder="Ihr Name"
-              style={{ height: 55 }}
-            />
-          </div>
-          <div className="col-12 col-sm-6">
-            <input
-              type="email"
-              className="form-control border-0"
-              placeholder="Ihre E-Mail"
-              style={{ height: 55 }}
-            />
-          </div>
-          <div className="col-12 col-sm-6">
-            <input
-              type="text"
-              className="form-control border-0"
-              placeholder="Ihre Telefonnummer"
-              style={{ height: 55 }}
-            />
-          </div>
-          <div className="col-12 col-sm-6">
-          <select
-  className="form-select border-0"
-  style={{ height: 55 }}
-  defaultValue="" // Sets the default selected option
->
-  <option value="" disabled>
-    Wählen Sie einen Service
-  </option>
-  <option value="roof-installation">Dachinstallation</option>
-  <option value="flat-surface-installation">Flachflächeninstallation</option>
-  <option value="maintenance">Wartung</option>
-  <option value="other">Sonstiges</option>
-</select>
-
-
-                </div>
-          <div className="col-12">
-            <textarea
-              className="form-control border-0"
-              placeholder="Besondere Anmerkungen"
-              defaultValue={""}
-            />
-          </div>
-          <div className="col-12">
-            <button
-              className="btn btn-primary rounded-pill py-3 px-5"
-              type="submit"
-            >
-              Absenden
-            </button>
-          </div>
-        </div>
-      </form>
+      <form onSubmit={handleSubmit}>
+                  <div className="row g-3">
+                    <div className="col-12 col-sm-6">
+                      <input
+                        type="text"
+                        name="name"
+                        className="form-control border-0"
+                        placeholder="Ihr Name"
+                        style={{ height: 55 }}
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div className="col-12 col-sm-6">
+                      <input
+                        type="email"
+                        name="email"
+                        className="form-control border-0"
+                        placeholder="Ihre E-Mail"
+                        style={{ height: 55 }}
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div className="col-12 col-sm-6">
+                      <input
+                        type="text"
+                        name="phone"
+                        className="form-control border-0"
+                        placeholder="Ihr Mobiltelefon"
+                        style={{ height: 55 }}
+                        value={formData.phone}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="col-12 col-sm-6">
+                      <select
+                        name="service"
+                        className="form-select border-0"
+                        style={{ height: 55 }}
+                        value={formData.service}
+                        onChange={handleChange}
+                        required
+                      >
+                        <option value="" disabled>
+                          Wählen Sie einen Service
+                        </option>
+                        <option value="roof-installation">Dachinstallation</option>
+                        <option value="flat-surface-installation">Flachflächeninstallation</option>
+                        <option value="maintenance">Wartung</option>
+                        <option value="other">Sonstiges</option>
+                      </select>
+                    </div>
+                    <div className="col-12">
+                      <textarea
+                        name="note"
+                        className="form-control border-0"
+                        placeholder="Besondere Anmerkung"
+                        value={formData.note}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="col-12">
+                      <button className="btn btn-primary rounded-pill py-3 px-5" type="submit" disabled={isLoading}>
+                        {isLoading ? "Wird gesendet..." : "Absenden"}
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                {successMessage && (
+                  <div className="alert alert-success mt-3">
+                    {successMessage}
+                  </div>
+                )}
     </div>
   </div>
 </div>

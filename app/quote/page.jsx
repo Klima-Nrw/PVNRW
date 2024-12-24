@@ -38,11 +38,11 @@ export default function About() {
         setSuccessMessage("Anfrage erfolgreich gesendet!"); // Set success message
         setFormData({ name: "", email: "", phone: "", service: "", note: "" });
       } else {
-        alert("Fehler beim Senden der Anfrage.");
+       setSuccessMessage("Fehler beim Senden der Anfrage.");
       }
     } catch (error) {
       console.error(error);
-      alert("Ein Fehler ist aufgetreten.");
+      setSuccessMessage("Ein Fehler ist aufgetreten.");
     } finally {
       setIsLoading(false); // Set loading state to false after request completes
     }
