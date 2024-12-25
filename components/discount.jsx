@@ -8,7 +8,8 @@ export default function ChristmasPopup() {
   const [successMessage, setSuccessMessage] = useState('');
   const [snowflakes, setSnowflakes] = useState([]);
   const [showBullet, setShowBullet] = useState(false);
-  const [loading, setLoading] = useState(false); // Loader state
+  const [loading, setLoading] = useState(false);
+  const [countdown, setCountdown] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -30,7 +31,28 @@ export default function ChristmasPopup() {
 
     generateSnowflakes();
 
-    return () => clearTimeout(timer);
+    // Set up countdown timer
+    const countdownTimer = setInterval(() => {
+      const now = new Date();
+      const targetDate = new Date(now.getFullYear(), 11, 30); // December 30th of current year
+      if (now > targetDate) {
+        targetDate.setFullYear(targetDate.getFullYear() + 1); // If we've passed Dec 30th, set for next year
+      }
+      
+      const difference = targetDate.getTime() - now.getTime();
+      
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+      clearInterval(countdownTimer);
+    };
   }, []);
 
   const handleClose = () => {
@@ -46,7 +68,7 @@ export default function ChristmasPopup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loader
+    setLoading(true);
     const phoneNumber = document.getElementById('phoneInput').value;
 
     try {
@@ -63,7 +85,7 @@ export default function ChristmasPopup() {
         setSuccessMessage('Danke schön! Unser Team wird sich in Kürze bei Ihnen melden');
         setTimeout(() => {
           handleClose();
-        }, 5000); // Close popup after 5 seconds
+        }, 5000);
       } else {
         setSuccessMessage('Bitte versuchen Sie es später noch einmal.');
       }
@@ -71,7 +93,7 @@ export default function ChristmasPopup() {
       console.error('Error:', error);
       setSuccessMessage('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später.');
     } finally {
-      setLoading(false); // Hide loader
+      setLoading(false);
     }
   };
 
@@ -88,7 +110,12 @@ export default function ChristmasPopup() {
             <h2 id="popupTitle">Weihnachtsgeschenk!</h2>
             <div id="popupBody">
               <h3 id="discountText">🎄 10% RABATT 🎄</h3>
-              <p id="offerText">bis 29. Dezember</p>
+              <p id="offerText">Angebot endet in:</p>
+              <div id="countdown">
+                {countdown.split(' ').map((unit, index) => (
+                  <span key={index}>{unit}</span>
+                ))}
+              </div>
               {!successMessage ? (
                 <form id="phoneForm" onSubmit={handleSubmit}>
                   <label htmlFor="phoneInput">Geben Sie Ihre Handynummer für eine kostenlose Beratung ein:</label>
@@ -103,7 +130,6 @@ export default function ChristmasPopup() {
             </div>
           </div>
 
-          {/* Render snowflakes */}
           {snowflakes.map((flake) => (
             <div
               key={flake.id}
@@ -131,3 +157,4 @@ export default function ChristmasPopup() {
     </>
   );
 }
+
