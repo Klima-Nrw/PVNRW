@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://pvnrw.de
+
+# Sitemaps
+Sitemap: https://pvnrw.de/sitemap.xml

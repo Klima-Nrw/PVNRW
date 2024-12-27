@@ -7,7 +7,7 @@ export default function Footer() {
     <>
       {/* Footer Start */}
       <div
-        className="container-fluid bg-dark text-body footer mt-5 pt-5 wow fadeIn"
+        className="container-fluid bg-dark text-body footer  pt-5 wow fadeIn"
         data-wow-delay="0.1s"
       >
         <div className="container py-5">
@@ -79,42 +79,42 @@ export default function Footer() {
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/recentwork-2.jpg"
+                    src="/img/recentwork-2.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/recentwork-1.jpg"
+                    src="/img/recentwork-1.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/recentwork-3.jpg"
+                    src="/img/recentwork-3.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/recentwork-4.jpg"
+                    src="/img/recentwork-4.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/recentwork-9.jpg"
+                    src="/img/recentwork-9.jpg"
                     alt=""
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded"
-                    src="img/recentwork-5.jpg"
+                    src="/img/recentwork-5.jpg"
                     alt=""
                   />
                 </div>

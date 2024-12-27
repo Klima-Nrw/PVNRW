@@ -5,6 +5,10 @@ import Script from 'next/script';
 import Privacybox from "../components/slider"
 import ChristmasPopup from '../components/discount';
 import React, { useState, useEffect } from "react";
+import '@/public/css/bootstrap.min.css';
+import '@/public/css/style.css';
+
+
 
 import { usePathname } from "next/navigation";
 
@@ -50,11 +54,8 @@ export default function RootLayout({ children }) {
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
     rel="stylesheet"
   />
+
   
-  {/* Customized Bootstrap Stylesheet */}
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
-  {/* Template Stylesheet */}
-  <link href="css/style.css" rel="stylesheet" />
 </head>
 
       <body suppressHydrationWarning>

@@ -41,10 +41,50 @@
     transition: .5s;
 }
 
-.btn.btn-primary,
-.btn.btn-outline-primary:hover {
+.btn.btn-primary {
     color: #FFFFFF;
 }
+
+
+.btn-check:checked + .btn {
+    color: #ffffff; /* Change text color for selected state */
+    background-color: #13487f; /* Optional: Change background color */
+    border-color: #13487f; /* Optional: Change border color */
+  }
+
+
+.outline-primary {
+    color: #13487f; /* Primary color for text */
+    border-color: #13487f; /* Primary color for border */
+    background-color: transparent; /* Transparent background */
+}
+
+.outline-primary:hover {
+    color: #13487f; /* White text on hover */
+    background-color: #fff; /* Primary color for background on hover */
+    border-color: #13487f; /* Primary color for border on hover */
+}
+
+.outline-primary:focus, 
+.outline-primary.focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.5); /* Focus ring with primary color */
+}
+
+.outline-primary:disabled,
+.outline-primary.disabled {
+    color: #6c757d; /* Disabled text color */
+    background-color: transparent; /* Transparent background */
+    border-color: #6c757d; /* Disabled border color */
+}
+
+.outline-primary:active, 
+.outline-primary.active, 
+.show > .outline-primary.dropdown-toggle {
+    color: #fff !important; /* White text on active */
+    background-color: #13487f; /* Darker primary color on active */
+    border-color: #0a53be; /* Darker border color on active */
+}
+
 
 .btn-square {
     width: 38px;
@@ -84,7 +124,7 @@
 
 .navbar .navbar-nav .nav-link {
     margin-right: 30px;
-    padding: 25px 0;
+    padding: 15px 0;
     color: var(--dark);
     font-size: 15px;
     font-weight: 500;
@@ -277,13 +317,13 @@
 
 @media (min-width: 1200px) {
     .feature-text  {
-        padding-left: calc(((100% - 1140px) / 2) + .75rem);
+        padding-left:100px;
     }
 }
 
 @media (min-width: 1400px) {
     .feature-text  {
-        padding-left: calc(((100% - 1320px) / 2) + .75rem);
+        padding-left: 100px;
     }
 }
 
@@ -360,7 +400,7 @@
 /*** Quote ***/
 @media (min-width: 992px) {
     .container.quote {
-        max-width: 100% !important;
+        max-width: 100% ;
     }
 
     .quote-text  {
@@ -399,97 +439,6 @@
     transition: .5s;
 }
 
-
-/*** Testimonial ***/
-.testimonial-carousel::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    z-index: 1;
-}
-
-.testimonial-carousel::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    z-index: 1;
-}
-
-@media (min-width: 768px) {
-    .testimonial-carousel::before,
-    .testimonial-carousel::after {
-        width: 200px;
-    }
-}
-
-@media (min-width: 992px) {
-    .testimonial-carousel::before,
-    .testimonial-carousel::after {
-        width: 300px;
-    }
-}
-
-.testimonial-carousel .owl-nav {
-    position: absolute;
-    width: 350px;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    opacity: 0;
-    transition: .5s;
-    z-index: 1;
-}
-
-.testimonial-carousel:hover .owl-nav {
-    width: 300px;
-    opacity: 1;
-}
-
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
-    position: relative;
-    color: var(--primary);
-    font-size: 45px;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-nav .owl-prev:hover,
-.testimonial-carousel .owl-nav .owl-next:hover {
-    color: var(--dark);
-}
-
-.testimonial-carousel .testimonial-img img {
-    width: 100px;
-    height: 100px;
-}
-
-.testimonial-carousel .testimonial-img .btn-square {
-    position: absolute;
-    bottom: -19px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.testimonial-carousel .owl-item .testimonial-text {
-    margin-bottom: 30px;
-    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-    transform: scale(.8);
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-item.center .testimonial-text {
-    transform: scale(1);
-}
 
 
 /*** Contact ***/

@@ -84,7 +84,15 @@ export default function About() {
       <div className="container-fluid bg-light overflow-hidden px-lg-0" style={{ margin: "6rem 0" }}>
         <div className="container contact px-lg-0">
           <div className="row g-0 mx-lg-0">
-            <div className="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
+          <div
+  className="col-lg-6 contact-text py-5 wow fadeIn px-1 px-md-5"
+  data-wow-delay="0.5s"
+  style={{
+    paddingLeft: "10px", // Default padding for smaller screens
+  }}
+ >
+
+
               <div className="p-lg-5 ps-lg-0">
                 <h6 className="text-primary">Kontaktieren Sie uns</h6>
                 <h1 className="mb-4">Zögern Sie nicht, uns zu kontaktieren</h1>

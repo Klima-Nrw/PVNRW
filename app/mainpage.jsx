@@ -2,52 +2,59 @@
 import dynamic from 'next/dynamic'
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Form from "../components/form"
+import Boxes from "../components/boxes"
+
 
 
 
 export default function Page() {
- const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    note: "",
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
   });
 
+  const [statusMessage, setStatusMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);  // Set loading state to true
-    setSuccessMessage("");  // Clear previous success message
+
+    setStatusMessage(''); // Reset status message
+    setIsLoading(true); // Set loading state
 
     try {
-      const response = await fetch("/api/quote", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(formData),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
-        setSuccessMessage("Anfrage erfolgreich gesendet!"); // Set success message
-        setFormData({ name: "", email: "", phone: "", service: "", note: "" });
+        setStatusMessage('Anfrage erfolgreich gesendet!');
+        setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
       } else {
-        setSuccessMessage("Fehler beim Senden der Anfrage.");
+        setStatusMessage('Fehler beim Senden der Anfrage');
       }
     } catch (error) {
-      console.error(error);
-      setSuccessMessage("Ein Fehler ist aufgetreten.");
+      setStatusMessage('Ein Fehler ist aufgetreten.Ein Fehler ist aufgetreten..');
     } finally {
-      setIsLoading(false); // Set loading state to false after request completes
+      setIsLoading(false); // Reset loading state
     }
   };
-
 
   return (
     <>
@@ -321,14 +328,20 @@ Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unter
 </div>
 
   {/* Service End */}
-  {/* Feature Start */}
-  <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+
+<Form />
+
+   {/* Feature Start */}
+   <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
   <div className="container feature px-lg-0">
   <div className="row g-0 mx-lg-0">
   <div
-    className="col-lg-6 feature-text py-5 wow fadeIn"
-    data-wow-delay="0.1s"
-  >
+  className="col-lg-6 contact-text py-5 wow fadeIn px-1 px-md-5"
+  data-wow-delay="0.5s"
+  style={{
+    paddingLeft: "10px", // Default padding for smaller screens
+  }}
+ >
     <div className="p-lg-5 ps-lg-0">
       <h6 className="text-primary">Warum Uns Wählen!</h6>
       <h1 className="mb-4">
@@ -409,6 +422,11 @@ Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unter
 </div>
 
   {/* Feature End */}
+
+
+  <Boxes />
+
+
   {/* Projects Start */}
   <div className="container-xxl py-5">
   <div className="container">
@@ -491,7 +509,6 @@ Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unter
 </div>
 
 
-
   <div
   className="row g-4 mt-4 portfolio-container wow fadeInUp"
   data-wow-delay="0.5s"
@@ -562,13 +579,14 @@ Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unter
 
 </div>
 
+
   
   {/* Quote Start */}
-  <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+  <div className="container-fluid bg-light overflow-hidden mt-5 px-lg-0">
     <div className="container quote px-lg-0">
     <div className="row g-0 mx-lg-0">
   <div
-    className="col-lg-6 ps-lg-0 wow fadeIn"
+    className="col-lg-6"
     data-wow-delay="0.1s"
     style={{ minHeight: 400 }}
   >
@@ -585,204 +603,217 @@ Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unter
     className="col-lg-6 quote-text py-5 wow fadeIn"
     data-wow-delay="0.5s"
   >
-    <div className="p-lg-5 pe-lg-0">
-      <h6 className="text-primary">Kostenloses Angebot</h6>
-      <h1 className="mb-4">Holen Sie sich ein kostenloses Angebot</h1>
-      <p className="mb-4 pb-2">
-       Haben Sie Fragen oder benötigen Sie Hilfe? Kontaktieren Sie uns jederzeit. Wir sind bestrebt, Ihnen die Unterstützung zu bieten, die Sie zum Erreichen Ihrer Ziele benötigen..
-      </p>
-      <form onSubmit={handleSubmit}>
+    <div className="p-lg-5 ps-lg-0">
+                <h6 className="text-primary">Kontaktieren Sie uns</h6>
+                <h1 className="mb-4">Zögern Sie nicht, uns zu kontaktieren</h1>
+                <p className="mb-4">
+                  Haben Sie Fragen oder benötigen Sie Hilfe? Kontaktieren Sie uns jederzeit. Wir sind bestrebt, Ihnen die Unterstützung zu bieten, die Sie zum Erreichen Ihrer Ziele benötigen.
+                </p>
+                <form onSubmit={handleSubmit}>
                   <div className="row g-3">
-                    <div className="col-12 col-sm-6">
-                      <input
-                        type="text"
-                        name="name"
-                        className="form-control border-0"
-                        placeholder="Ihr Name"
-                        style={{ height: 55 }}
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
+                    <div className="col-md-6">
+                      <div className="form-floating">
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="name"
+                          name="name"
+                          placeholder="Ihr Name"
+                          value={formData.name}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="name">Ihr Name</label>
+                      </div>
                     </div>
-                    <div className="col-12 col-sm-6">
-                      <input
-                        type="email"
-                        name="email"
-                        className="form-control border-0"
-                        placeholder="Ihre E-Mail"
-                        style={{ height: 55 }}
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="col-12 col-sm-6">
-                      <input
-                        type="text"
-                        name="phone"
-                        className="form-control border-0"
-                        placeholder="Ihr Mobiltelefon"
-                        style={{ height: 55 }}
-                        value={formData.phone}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="col-12 col-sm-6">
-                      <select
-                        name="service"
-                        className="form-select border-0"
-                        style={{ height: 55 }}
-                        value={formData.service}
-                        onChange={handleChange}
-                        required
-                      >
-                        <option value="" disabled>
-                          Wählen Sie einen Service
-                        </option>
-                        <option value="roof-installation">Dachinstallation</option>
-                        <option value="flat-surface-installation">Flachflächeninstallation</option>
-                        <option value="maintenance">Wartung</option>
-                        <option value="other">Sonstiges</option>
-                      </select>
+                    <div className="col-md-6">
+                      <div className="form-floating">
+                        <input
+                          type="email"
+                          className="form-control"
+                          id="email"
+                          name="email"
+                          placeholder="Ihre E-Mail"
+                          value={formData.email}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="email">Ihre E-Mail</label>
+                      </div>
                     </div>
                     <div className="col-12">
-                      <textarea
-                        name="note"
-                        className="form-control border-0"
-                        placeholder="Besondere Anmerkung"
-                        value={formData.note}
-                        onChange={handleChange}
-                      />
+                      <div className="form-floating">
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="subject"
+                          name="subject"
+                          placeholder="Betreff"
+                          value={formData.subject}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="subject">Betreff</label>
+                      </div>
+                    </div>
+                    <div className="col-12">
+                      <div className="form-floating">
+                        <textarea
+                          className="form-control"
+                          placeholder="Hinterlassen Sie hier eine Nachricht"
+                          id="message"
+                          name="message"
+                          style={{ height: 100 }}
+                          value={formData.message}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="message">Nachricht</label>
+                      </div>
                     </div>
                     <div className="col-12">
                       <button className="btn btn-primary rounded-pill py-3 px-5" type="submit" disabled={isLoading}>
-                        {isLoading ? "Wird gesendet..." : "Absenden"}
+                        {isLoading ? 'Senden...' : 'Nachricht senden'}
                       </button>
                     </div>
                   </div>
                 </form>
-                {successMessage && (
-                  <div className="alert alert-success mt-3">
-                    {successMessage}
-                  </div>
-                )}
-    </div>
+                {statusMessage && <p className="mt-3">{statusMessage}</p>}
+              </div>
   </div>
 </div>
 
     </div>
   </div>
   {/* Quote End */}
-  {/* Team Start 
-  <div className="container-xxl py-5">
-    <div className="container">
-      <div
-        className="text-center mx-auto mb-5 wow fadeInUp"
-        data-wow-delay="0.1s"
-        style={{ maxWidth: 600 }}
-      >
-        <h6 className="text-primary">Team Member</h6>
-        <h1 className="mb-4">Experienced Team Members</h1>
+
+
+
+  <div className="pb-5 bg-light">
+  <div
+  className="text-center mx-auto mb-5 wow fadeInUp"
+  data-wow-delay="0.1s"
+  style={{ maxWidth: "600px" }}
+>
+  <h6 className="text-primary">Unser Blog</h6>
+  <h1 className="mb-4">
+  Entdecken Sie die neuesten Tipps, Trends und Erkenntnisse zur Solarenergie
+  </h1>
+</div>
+
+  <div className="container">
+    <div className="row g-4">
+      {/* First Blog Post */}
+      <div className="col-md-4">
+        <div className="card border-0 shadow h-100">
+          <img 
+            src="/img/article1.png" 
+            className="card-img-top rounded-top" 
+            alt="Blog post 1 thumbnail" 
+          />
+          <div className="card-body">
+            <h5 className="card-title fw-bold">
+            Regelmäßige Wartung sichert die langfristige Leistung von Solarmodulen
+            </h5>
+            <p className="card-text text-muted">
+            Die Installation von Solarmodulen ist ein großer Schritt in Richtung Energieunabhängigkeit und Nachhaltigkeit. Doch um sicherzustellen....
+            </p>
+            <Link href="/artikel/die-bedeutung-der-regelmaBigen-wartung-von-solarmodulen" className="btn outline-primary">
+              Read More
+            </Link>
+          </div>
+        </div>
       </div>
-      <div className="row g-4">
-        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-          <div className="team-item rounded overflow-hidden">
-            <div className="d-flex">
-              <img className="img-fluid w-75" src="img/team-1.jpg" alt="" />
-              <div className="team-social w-25">
-                <a
-                  className="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                  href=""
-                >
-                  <i className="fab fa-facebook-f" />
-                </a>
-                <a
-                  className="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                  href=""
-                >
-                  <i className="fab fa-twitter" />
-                </a>
-                <a
-                  className="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                  href=""
-                >
-                  <i className="fab fa-instagram" />
-                </a>
-              </div>
-            </div>
-            <div className="p-4">
-              <h5>Full Name</h5>
-              <span>Designation</span>
-            </div>
+
+      <div className="col-md-4">
+        <div className="card border-0 shadow h-100">
+          <img 
+            src="/img/article2.png" 
+            className="card-img-top rounded-top" 
+            alt="Blog post 1 thumbnail" 
+          />
+          <div className="card-body">
+            <h5 className="card-title fw-bold">
+            Maximierung der Energieeffizienz mit Solarmodulen auf dem Dach
+            </h5>
+            <p className="card-text text-muted">
+            Solarmodule auf dem Dach sind eine ausgezeichnete Investition für Hausbesitzer und Unternehmen, die ihre Energiekosten senken.....
+            </p>
+            <Link  href="/artikel/maximierung-der-energieeffizienz-mit-solarmodulen-auf-dem-dach" className="btn outline-primary">
+              Read More
+            </Link>
           </div>
         </div>
-        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-          <div className="team-item rounded overflow-hidden">
-            <div className="d-flex">
-              <img className="img-fluid w-75" src="img/team-2.jpg" alt="" />
-              <div className="team-social w-25">
-                <a
-                  className="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                  href=""
-                >
-                  <i className="fab fa-facebook-f" />
-                </a>
-                <a
-                  className="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                  href=""
-                >
-                  <i className="fab fa-twitter" />
-                </a>
-                <a
-                  className="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                  href=""
-                >
-                  <i className="fab fa-instagram" />
-                </a>
-              </div>
-            </div>
-            <div className="p-4">
-              <h5>Full Name</h5>
-              <span>Designation</span>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-          <div className="team-item rounded overflow-hidden">
-            <div className="d-flex">
-              <img className="img-fluid w-75" src="img/team-3.jpg" alt="" />
-              <div className="team-social w-25">
-                <a
-                  className="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                  href=""
-                >
-                  <i className="fab fa-facebook-f" />
-                </a>
-                <a
-                  className="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                  href=""
-                >
-                  <i className="fab fa-twitter" />
-                </a>
-                <a
-                  className="btn btn-lg-square btn-outline-primary rounded-circle mt-3"
-                  href=""
-                >
-                  <i className="fab fa-instagram" />
-                </a>
-              </div>
-            </div>
-            <div className="p-4">
-              <h5>Full Name</h5>
-              <span>Designation</span>
-            </div>
+      </div>
+
+      {/* Second Blog Post */}
+      <div className="col-md-4">
+        <div className="card border-0 shadow h-100">
+          <img 
+            src="/img/article3.png" 
+            className="card-img-top rounded-top" 
+            alt="Blog post 2 thumbnail" 
+          />
+          <div className="card-body">
+            <h5 className="card-title fw-bold">
+            Warum Flache Solar-Module Perfekt für Moderne Gebäude Sind
+            </h5>
+            <p className="card-text text-muted">
+            Flache Solar-Module bieten eine moderne Lösung für Gebäude mit begrenztem Dachraum oder wenn ästhetische Überlegungen wichtig sind....
+            </p>
+            <Link href="/artikel/warum-flache-solar-module-perfekt-fur-moderne-gebaude-sind" className="btn outline-primary">
+              Read More
+            </Link>
           </div>
         </div>
       </div>
     </div>
   </div>
- */}
+</div>
+
+
+<div className="pt-5" style={{ backgroundColor: '#13487f' }}>
+  <div className="container py-5">
+    <div className="row justify-content-center text-center">
+      <div className="col-lg-8">
+        <span className="badge bg-light text-primary px-4 py-2 fs-6 mb-4 d-inline-block">
+          Jetzt Angebote Sichern
+        </span>
+        
+        <h2 className="display-4 text-white fw-bold mb-4">
+          Machen Sie Ihr Zuhause energieeffizient<br/>mit Solarpanelen
+        </h2>
+        
+        <p className="lead text-white-50 mb-5">
+          Schließen Sie sich den zahlreichen zufriedenen Kunden an, die von unserer professionellen Installation und Wartung von Solaranlagen profitieren.
+        </p>
+        
+        <div className="d-flex flex-column align-items-center gap-4">
+          <Link href="/quote">
+          <button 
+            className="btn  bg-light outline-primary btn-lg px-5 py-3 fw-bold shadow-sm"
+            style={{ transition: 'all 0.3s ease' }}
+            onMouseOver={(e) => {
+              e.target.style.transform = 'scale(1.05)';
+              e.target.style.boxShadow = '0 1rem 3rem rgba(0,0,0,.175)';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.boxShadow = '0 .125rem .25rem rgba(0,0,0,.075)';
+            }}
+          >
+            Holen Sie sich Ihre kostenlose Beratung
+          </button>
+          </Link>
+          
+          <div className="text-white-50 small">
+            <span className="me-3">✓ Keine Kreditkarte erforderlich</span>
+            <span className="me-3">✓ Kostenlose Beratung</span>
+            <span>✓ Expertenberatung</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 

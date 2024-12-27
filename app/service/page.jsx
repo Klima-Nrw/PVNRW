@@ -41,7 +41,7 @@ import Link from "next/link";
   </div>
   {/* Page Header End */}
   {/* Service Start */}
-  <div className="container-xxl py-5">
+  <div className="md-container-fluid py-5">
   <div className="container">
     <div
       className="text-center mx-auto mb-5 wow"
@@ -150,9 +150,12 @@ import Link from "next/link";
   <div className="container feature px-lg-0">
   <div className="row g-0 mx-lg-0">
   <div
-    className="col-lg-6 feature-text py-5 wow fadeIn"
-    data-wow-delay="0.1s"
-  >
+  className="col-lg-6 contact-text py-5 wow fadeIn px-1 px-md-5"
+  data-wow-delay="0.5s"
+  style={{
+    paddingLeft: "10px", // Default padding for smaller screens
+  }}
+ >
     <div className="p-lg-5 ps-lg-0">
       <h6 className="text-primary">Warum Uns Wählen!</h6>
       <h1 className="mb-4">
