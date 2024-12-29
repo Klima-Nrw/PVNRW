@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import './ChristmasPopup.css';
+import './discount.css';
 
 export default function ChristmasPopup() {
   const [show, setShow] = useState(false);
@@ -31,23 +31,23 @@ export default function ChristmasPopup() {
 
     generateSnowflakes();
 
-    // Set up countdown timer
     const countdownTimer = setInterval(() => {
-      const now = new Date();
-      const targetDate = new Date(now.getFullYear(), 11, 30); // December 30th of current year
-      if (now > targetDate) {
-        targetDate.setFullYear(targetDate.getFullYear() + 1); // If we've passed Dec 30th, set for next year
-      }
+      const now = new Date(); // Current date and time
+      const targetDate = new Date(2025, 0, 1); // January 1st, 2025
       
-      const difference = targetDate.getTime() - now.getTime();
-      
+      const difference = targetDate.getTime() - now.getTime(); // Time difference in milliseconds
+    
+      // Calculate time components
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
+    
+      // Set countdown display
       setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+         
     }, 1000);
+    
 
     return () => {
       clearTimeout(timer);
