@@ -10,31 +10,31 @@ export async function middleware(req) {
   // If the IP is from localhost, skip geolocation check
   if (ip === '::1' || ip === 'localhost:3000') {
     console.log('Running locally, skipping country check.');
-    return NextResponse.next(); // Allow the request to continue
+  //  return NextResponse.next(); // Allow the request to continue
   }
 
   console.log(`User IP: ${ip}`);
 
-  try {
+ // try {
     // Fetch user location using ipinfo.io
-    const response = await axios.get(`https://ipinfo.io/${ip}/json`);
-    const userCountry = response.data.country;
+  //  const response = await axios.get(`https://ipinfo.io/${ip}/json`);
+   // const userCountry = response.data.country;
 
     console.log(`User Country: ${userCountry}`);
 
     // Check if the user's country is allowed
-    if (allowedCountries.includes(userCountry)) {
-      return NextResponse.next(); // Allow access
-    } else {
+    //if (allowedCountries.includes(userCountry)) {
+     // return NextResponse.next(); // Allow access
+   // } else {
       // If country is not allowed, return a 403 response
-      return new NextResponse('Access denied.\n This site is only available in Germany.', {
-        status: 403,
-      });
-    }
-  } catch (error) {
-    console.error('Error fetching geolocation data:', error);
-    return new NextResponse('Error determining your location.', { status: 500 });
-  }
+    //  return new NextResponse('Access denied.\n This site is only available in Germany.', {
+     //   status: 403,
+     // });
+   // }
+ // } catch (error) {
+  //  console.error('Error fetching geolocation data:', error);
+   // return new NextResponse('Error determining your location.', { status: 500 });
+//  }
 }
 
 // Middleware configuration to apply to all routes
