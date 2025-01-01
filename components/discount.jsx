@@ -33,7 +33,8 @@ export default function ChristmasPopup() {
 
     const countdownTimer = setInterval(() => {
       const now = new Date(); // Current date and time
-      const targetDate = new Date(2025, 0, 1); // January 1st, 2025
+    const targetDate = new Date(2025, 0, 6); // January 6th, 2025
+
       
       const difference = targetDate.getTime() - now.getTime(); // Time difference in milliseconds
     
