@@ -1,11 +1,11 @@
 <?php
 // Sicherstellen, dass die Variablen definiert sind
-$search_term = $search_term ?? "Klima"; // Standardwert
+$search_term = $search_term ?? "Photovoltaik"; // Standardwert
 $city = $city ?? "Dorsten"; // Standardwert
 $ads = null; // Standardwert
 
 // URL
-$url = "https://www.kleinanzeigen.de/s-dienstleistungen/46286/anbieter:privat/anzeige:gesuche/klimaanlage/k0c297l1758r50";
+$url = "https://www.kleinanzeigen.de/s-46286/anbieter:privat/anzeige:gesuche/photovoltaik/k0l1758r100";
 
 // Initialize cURL
 $ch = curl_init();
@@ -54,20 +54,6 @@ $ads = $xpath->query("//article[contains(@class, 'aditem') and not(ancestor::ul[
             margin-bottom: 20px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
-        .category-select {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .category-select select {
-            padding: 10px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 8px;
-            background-color: #34495e;
-            color: white;
-            cursor: pointer;
-        }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -86,10 +72,6 @@ $ads = $xpath->query("//article[contains(@class, 'aditem') and not(ancestor::ul[
         }
         .card.clicked {
             background: #e74c3c;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
         .card img {
             max-width: 100%;
@@ -117,8 +99,8 @@ $ads = $xpath->query("//article[contains(@class, 'aditem') and not(ancestor::ul[
 <h1>
     Gefundene Anzeigen für 
     <select id="category-selector" onchange="handleCategoryChange()" style="font-size: 1em; padding: 5px; background: none; color: #f7d51d; border: none; text-decoration: underline; cursor: pointer;">
-        <option value="Klima" selected>Klimaanlagen</option>
-        <option value="Photovoltaik">Photovoltaik</option>
+        <option value="Photovoltaik" selected>Photovoltaik</option>
+        <option value="Klimaanlagen">Klimaanlagen</option>
     </select>
 </h1>
 
@@ -126,16 +108,21 @@ $ads = $xpath->query("//article[contains(@class, 'aditem') and not(ancestor::ul[
     function handleCategoryChange() {
         const selectedCategory = document.getElementById('category-selector').value;
 
+        // Debugging-Ausgabe in der Konsole
+        console.log(`Selected category: ${selectedCategory}`);
+
         // Überprüfen der Auswahl und Weiterleitung
         if (selectedCategory === 'Photovoltaik') {
-            window.location.href = 'http://127.0.0.1:8080/Photovoltaik.php'; // Weiterleitung zu http://127.0.0.1:8080/Photovoltaik.php
-        } else if (selectedCategory === 'Klima') {
-            window.location.href = 'http://127.0.0.1:8080/Klima.php'; // Weiterleitung zu Klima.php
+            console.log("Weiterleitung zu Photovoltaik.php");
+            window.location.href = 'Photovoltaik.php'; // Weiterleitung zu Photovoltaik.php
+        } else if (selectedCategory === 'Klimaanlagen') {
+            console.log("Weiterleitung zu Klima.php");
+            window.location.href = 'Klima.php'; // Weiterleitung zu Klima.php
+        } else {
+            console.log("Unbekannte Kategorie ausgewählt: ", selectedCategory);
         }
     }
 </script>
-
-
 
 <div class="gallery">
 <?php
@@ -147,6 +134,16 @@ if ($ads && $ads->length > 0) {
         $relativeLinkNode = $xpath->query(".//a[contains(@class, 'ellipsis')]//@href", $ad)->item(0);
 
         $title = $titleNode ? trim($titleNode->textContent) : "Kein Titel";
+
+        // Überspringe Anzeigen mit "Praktikant", "Verstärkung" oder "Festanstellung"
+        if (
+            stripos($title, 'Praktikant') !== false || 
+            stripos($title, 'Verstärkung') !== false || 
+            stripos($title, 'Festanstellung') !== false
+        ) {
+            continue;
+        }
+
         $price = $priceNode ? trim($priceNode->textContent) : "Kein Preis";
         $relativeLink = $relativeLinkNode ? trim($relativeLinkNode->textContent) : "#";
         $link = "https://www.kleinanzeigen.de" . $relativeLink;
@@ -198,15 +195,6 @@ if ($ads && $ads->length > 0) {
             });
         });
     });
-
-    function handleCategoryChange() {
-        const selector = document.getElementById('category-selector');
-        const selectedValue = selector.value;
-
-        if (selectedValue === 'Photovoltaik') {
-            window.location.href = 'Photovoltaik.php';
-        }
-    }
 </script>
 
 </body>
