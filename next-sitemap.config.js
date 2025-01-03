@@ -20,6 +20,7 @@ module.exports = {
         '/impressum',
         '/geschaftsbedingungen',
         '/Datenschutzerklarung',
+        '/suche',
         
 
 
