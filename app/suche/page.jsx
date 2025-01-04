@@ -1,88 +1,180 @@
-const fetch = require('node-fetch');
-const { JSDOM } = require('jsdom');
+'use client';
 
-(async function () {
-    const searchTerm = "Klima"; // Standardwert
-    const city = "Dorsten"; // Standardwert
+import { hide } from '@popperjs/core';
+import { useState, useEffect } from 'react';
 
-    // URL
-    const url = "https://www.kleinanzeigen.de/s-dienstleistungen/46286/anbieter:privat/anzeige:gesuche/klimaanlage/k0c297l1758r50";
+const styles = {
+  container: {
+    background: 'linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d)',
+    minHeight: '100vh',
+    padding: '20px',
+    color: '#ffffff',
+    fontFamily: 'Arial, sans-serif'
+  },
+  header: {
+    textAlign: 'center',
+    color: '#f7d51d',
+    fontSize: '2.5rem',
+    marginBottom: '20px',
+    textShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)'
+  },
+  select: {
+    fontSize: '1em',
+    padding: '5px',
+    background: 'none',
+    color: '#f7d51d',
+    border: 'none',
+    textDecoration: 'underline',
+    cursor: 'pointer',
+    display: 'inline-block',
+    width: 'auto'
+  },
+  option: {
+    background: '#2c3e50',
+    color: '#ffffff'
+  },
+  gallery: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gap: '25px',
+    padding: '20px',
+    margin: '0 auto'
+  },
+  card: {
+    background: '#2c3e50',
+    borderRadius: '12px',
+    padding: '15px',
+    textAlign: 'center',
+    transition: 'transform 0.3s, box-shadow 0.3s',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+  },
+  cardClicked: {
+    background: '#e74c3c'
+  },
+  image: {
+    maxWidth: '100%',
+    borderRadius: '8px',
+    marginBottom: '15px'
+  },
+  link: {
+    color: '#f7d51d',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    fontSize: '1.2rem'
+  },
+  price: {
+    color: '#ecf0f1',
+    fontSize: '1rem',
+    marginTop: '10px'
+  },
+  description: {
+    color: '#ecf0f1',
+    fontSize: '0.9rem',
+    marginTop: '10px',
+    display: 'inline',
+    textAlign: 'left',
+    padding: '10px',
+    borderRadius: '8px',
+    height: 'auto'
+  },
+  loading: {
+    textAlign: 'center',
+    color: '#f7d51d',
+    fontSize: '1.2rem',
+    padding: '20px'
+  }
+};
 
+export default function SearchPage() {
+  const [ads, setAds] = useState([]);
+  const [category, setCategory] = useState('photovoltaik');
+  const [clickedCards, setClickedCards] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const savedClicks = JSON.parse(localStorage.getItem('clickedCards') || '{}');
+    setClickedCards(savedClicks);
+    fetchAds();
+  }, [category]);
+
+  const fetchAds = async () => {
     try {
-        // Fetch the HTML
-        const response = await fetch(url, {
-            headers: {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-            }
-        });
-
-        if (!response.ok) {
-            console.error(`HTTP Error: ${response.status}`);
-            return;
-        }
-
-        const html = await response.text();
-
-        // Parse the HTML
-        const dom = new JSDOM(html);
-        const document = dom.window.document;
-
-        // Find ads
-        const ads = document.querySelectorAll("article.aditem:not(#srchrslt-adtable-altads article)");
-
-        // Extract ad details
-        const adData = Array.from(ads).map((ad) => {
-            const titleElement = ad.querySelector("a.ellipsis");
-            const priceElement = ad.querySelector("p.aditem-main--middle--price");
-            const linkElement = ad.querySelector("a.ellipsis");
-            const imageElement = ad.querySelector("img");
-
-            return {
-                title: titleElement ? titleElement.textContent.trim() : "Kein Titel",
-                price: priceElement ? priceElement.textContent.trim() : "Kein Preis",
-                link: linkElement ? `https://www.kleinanzeigen.de${linkElement.getAttribute('href')}` : "#",
-                image: imageElement ? imageElement.getAttribute('src') : "https://static.kleinanzeigen.de/static/img/common/logo/logo-kleinanzeigen-horizontal.1f2pao1sh7vgo.svg"
-            };
-        });
-
-        // Log the ads
-        console.log(adData);
-
-        // Example: render ads in an HTML structure
-        renderAds(adData);
-
+      setLoading(true);
+      const response = await fetch(`/api/search?category=${category}`);
+      const data = await response.json();
+      if (data.ads) {
+        setAds(data.ads);
+      }
     } catch (error) {
-        console.error(`Error fetching the URL: ${error.message}`);
+      console.error('Error fetching ads:', error);
+    } finally {
+      setLoading(false);
     }
+  };
 
-    function renderAds(adData) {
-        const gallery = document.createElement('div');
-        gallery.classList.add('gallery');
+  const handleCardClick = (index) => {
+    const newClickedCards = { ...clickedCards, [index]: true };
+    setClickedCards(newClickedCards);
+    localStorage.setItem('clickedCards', JSON.stringify(newClickedCards));
+  };
 
-        adData.forEach((ad) => {
-            const card = document.createElement('div');
-            card.classList.add('card');
+  const handleCategoryChange = (e) => {
+    const newCategory = e.target.value.toLowerCase();
+    setCategory(newCategory);
+  };
 
-            const img = document.createElement('img');
-            img.src = ad.image;
-            img.alt = ad.title;
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.header}>
+        Gefundene Anzeigen für{' '}
+        <select
+          value={category}
+          onChange={handleCategoryChange}
+          style={styles.select}
+        >
+          <option style={styles.option} value="photovoltaik">Photovoltaik</option>
+          <option style={styles.option} value="klimaanlagen">Klimaanlagen</option>
+        </select>
+      </h1>
 
-            const title = document.createElement('h3');
-            const link = document.createElement('a');
-            link.href = ad.link;
-            link.target = "_blank";
-            link.textContent = ad.title;
-            title.appendChild(link);
+      {loading && <div style={styles.loading}>Laden...</div>}
 
-            const price = document.createElement('p');
-            price.innerHTML = `<strong>Preis:</strong> ${ad.price}`;
-
-            card.appendChild(img);
-            card.appendChild(title);
-            card.appendChild(price);
-            gallery.appendChild(card);
-        });
-
-        document.body.appendChild(gallery);
-    }
-})();
+      <div style={styles.gallery}>
+        {ads.map((ad, index) => (
+          <div
+            key={index}
+            style={{
+              ...styles.card,
+              ...(clickedCards[index] ? styles.cardClicked : {})
+            }}
+          >
+            <img
+              src={ad.imageUrl}
+              alt="Ad Image"
+              style={styles.image}
+            />
+            <div>
+              <a
+                href={ad.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={styles.link}
+                onClick={() => handleCardClick(index)}
+              >
+                {ad.title}
+              </a>
+              <p style={styles.price}>
+                <strong>Preis:</strong> {ad.price}
+              </p>
+              <div style={styles.description}>
+  {ad.description.length > 200
+    ? `${ad.description.substring(0, 200)}...`
+    : ad.description}
+</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
