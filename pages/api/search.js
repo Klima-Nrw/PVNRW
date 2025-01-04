@@ -3,8 +3,19 @@ import { JSDOM } from 'jsdom';
 
 export default async function handler(req, res) {
   try {
-    const { category = 'photovoltaik' } = req.query;
-    const url = `https://www.kleinanzeigen.de/s-46286/anbieter:privat/anzeige:gesuche/${category}/k0l1758r100`;
+    const category = req.query.category;
+
+    let url;
+if (category === 'klimaanlagen') {
+  url = `https://www.kleinanzeigen.de/s-dienstleistungen/46286/anbieter:privat/anzeige:gesuche/klimaanlage/k0c297l1758r50`;
+} else if (category === 'photovoltaik') {
+  url = `https://www.kleinanzeigen.de/s-46286/anbieter:privat/anzeige:gesuche/photovoltaik/k0l1758r100`;
+} else {
+  console.log('Invalid category:', category);
+}
+
+
+    console.log(category);
     
     const response = await axios.get(url, {
       headers: {
