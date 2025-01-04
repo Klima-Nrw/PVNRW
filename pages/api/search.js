@@ -45,7 +45,7 @@ if (category === 'klimaanlagen') {
     const adsPromises = Array.from(document.querySelectorAll('article.aditem:not([id*="altads"])'))
       .map(async (ad) => {
         const title = ad.querySelector('a.ellipsis')?.textContent?.trim() || 'No Title';
-        const price = ad.querySelector('p.aditem-main--middle--price')?.textContent?.trim() || 'No Price';
+        const price = ad.querySelector('p.aditem-main--middle--price-shipping--price')?.textContent?.trim() || 'No Price';
         const relativeLink = ad.querySelector('a.ellipsis')?.getAttribute('href') || '#';
         const link = `https://www.kleinanzeigen.de${relativeLink}`;
         const imageUrl = ad.querySelector('img')?.getAttribute('src') || 
