@@ -56,7 +56,7 @@ export default function SolarForm() {
   };
 
   return (
-    <div className="container-fluid py-5" style={{background: 'linear-gradient(180deg,#13487f 0%, #ffffff 100%)'}}>
+    <div className="container-fluid py-5" style={{background: '#13487F'}}>
       <div className="row justify-content-center">
         <div className="col-lg-8">
           <div className="card shadow-lg border-0">

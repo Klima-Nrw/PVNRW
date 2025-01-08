@@ -1,9 +1,10 @@
 "use client";
-import dynamic from 'next/dynamic'
+import React from 'react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Form from "../components/form"
 import Boxes from "../components/boxes"
+import Offer from "../components/offer"
 
 
 
@@ -242,6 +243,12 @@ Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unter
     </div>
   </div>
   {/* About End */}
+
+
+
+<Offer />
+
+
   {/* Service Start */}
   <div className="container-xxl py-5">
   <div className="container">

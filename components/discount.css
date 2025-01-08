@@ -58,7 +58,7 @@
   }
   
   .popup-content {
-    background-color: white;
+    background-color:#ecfffd;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
@@ -85,8 +85,8 @@
     right: 0;
     bottom: 0;
     background-image: 
-      radial-gradient(circle, white 10%, transparent 10%),
-      radial-gradient(circle, white 10%, transparent 10%);
+      radial-gradient(circle, #ecfffd 10%, transparent 10%),
+      radial-gradient(circle, #ecfffd 10%, transparent 10%);
     background-size: 30px 30px;
     background-position: 0 0, 15px 15px;
     opacity: 0.3;
@@ -114,7 +114,7 @@
   
   #discountText {
     text-align: center;
-    color: #006400;
+    color: #13487F;
     font-size: 28px;
     margin-bottom: 5px;
   }
@@ -145,7 +145,7 @@
   }
   
   #submitButton {
-    background-color: #006400;
+    background-color: #13487F;
     color: white;
     padding: 10px;
     border: none;
@@ -155,9 +155,6 @@
     transition: background-color 0.3s;
   }
   
-  #submitButton:hover {
-    background-color: #004d00;
-  }
   
 /* Snowflakes */
 .snowflake {
@@ -184,8 +181,8 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #c41e3a;
-  color: white;
+  background-color: #ECFFFD;
+  color: #13487F;
   padding: 10px 5px;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
@@ -215,7 +212,7 @@
   color: #c41e3a;
   margin: 10px 0;
   padding: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 100, 0, 0.3);
   animation: pulse 2s infinite;
@@ -237,7 +234,7 @@
   display: inline-block;
   margin: 0 5px;
   padding: 5px;
-  background-color: #006400;
+  background-color: #13487F;
   color: white;
   border-radius: 3px;
 }

@@ -33,7 +33,7 @@ export default function ChristmasPopup() {
 
     const countdownTimer = setInterval(() => {
       const now = new Date(); // Current date and time
-    const targetDate = new Date(2025, 0, 6); // January 6th, 2025
+    const targetDate = new Date(2025, 0, 20); // January 6th, 2025
 
       
       const difference = targetDate.getTime() - now.getTime(); // Time difference in milliseconds
@@ -108,9 +108,9 @@ export default function ChristmasPopup() {
             <button id="closeButton" onClick={handleClose}>
               &times;
             </button>
-            <h2 id="popupTitle">Weihnachtsgeschenk!</h2>
+            <h2 id="popupTitle">Neujahrsgeschenk!</h2>
             <div id="popupBody">
-              <h3 id="discountText">🎄 10% RABATT 🎄</h3>
+              <h3 id="discountText">🎆 10% RABATT 🎆</h3>
               <p id="offerText">Angebot endet in:</p>
               <div id="countdown">
                 {countdown.split(' ').map((unit, index) => (
@@ -149,10 +149,10 @@ export default function ChristmasPopup() {
 
       {showBullet && (
         <div id="bulletIcon" onClick={handleReopenPopup}>
-          <span>🎄</span>
+          <span>🎆</span>
           <span>10%</span>
           <span>RABATT</span>
-          <span>🎄</span>
+          <span>🎆</span>
         </div>
       )}
     </>
