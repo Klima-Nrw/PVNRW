@@ -82,8 +82,8 @@ export default async function handler(req, res) {
 
     try {
       // Send emails
-    //  await transporter.sendMail(mailOptions);
-     // await transporter.sendMail(mailOptions2);
+      await transporter.sendMail(mailOptions);
+      await transporter.sendMail(mailOptions2);
 
       // Log the data (for debugging purposes)
       console.log(phone, name, offer);
