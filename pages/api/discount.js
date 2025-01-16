@@ -35,7 +35,7 @@ export default async function handler(req, res) {
     try {
       // Send emails
       await transporter.sendMail(mailOptions);
-      await transporter.sendMail(mailOptions2);
+     // await transporter.sendMail(mailOptions2);
       res.status(200).json({ message: 'Telefonnummer erfolgreich übermittelt!' });
     } catch (error) {
       console.error(error);
