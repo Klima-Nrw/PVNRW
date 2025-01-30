@@ -61,7 +61,7 @@ export default function Page() {
     <>
   
 
-<title>PVNrw | Wir installieren Solaranlagen</title>
+<title>Photovoltaik in NRW | Solaranlagen kaufen & installieren</title>
 <meta
     name="description"
     content="PV NRW – Ihr Experte für Photovoltaik-Lösungen in Nordrhein-Westfalen. Wir bieten maßgeschneiderte Solaranlagen für Privat- und Gewerbekunden, um eine nachhaltige Energiezukunft zu schaffen."
