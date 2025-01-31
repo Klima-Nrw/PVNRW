@@ -27,8 +27,8 @@ export default function Page() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setStatusMessage(''); // Reset status message
-    setIsLoading(true); // Set loading state
+    setStatusMessage('');
+    setIsLoading(true);
 
     try {
       const response = await fetch('/api/contact', {
@@ -43,33 +43,58 @@ export default function Page() {
 
       if (response.ok) {
         setStatusMessage('Anfrage erfolgreich gesendet!');
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
+        setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
         setStatusMessage('Fehler beim Senden der Anfrage');
       }
     } catch (error) {
       setStatusMessage('Ein Fehler ist aufgetreten.');
     } finally {
-      setIsLoading(false); // Reset loading state
+      setIsLoading(false);
     }
   };
 
   return (
     <>
       <Head>
-        <title>Photovoltaik in NRW | Solaranlagen kaufen & installieren</title>
+        <title>Photovoltaik Montage Dorsten | PV-Anlagen Installation</title>
         <meta
           name="description"
-          content="PV NRW – Ihr Experte für Photovoltaik-Lösungen in Nordrhein-Westfalen. Wir bieten maßgeschneiderte Solaranlagen für Privat- und Gewerbekunden, um eine nachhaltige Energiezukunft zu schaffen."
+          content="PVNRW bietet professionelle Photovoltaik-Montage in Dorsten und Umgebung. Nachhaltige Installation für maximale Energieerträge. Jetzt informieren!"
         />
         <meta
           name="keywords"
-          content="Photovoltaik, Solaranlagen, erneuerbare Energien, Solarstrom, Nordrhein-Westfalen, PV NRW"
+          content="Photovoltaik Montage Dorsten, Solaranlagen Installation, PV Anlage kaufen, erneuerbare Energien, Solarstrom"
         />
-        <meta name="author" content="PV NRW" />
+        <meta name="author" content="PVNRW" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="language" content="de" />
+
+        {/* JSON-LD Schema für SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "Product",
+              "name": "Photovoltaik Montage Dorsten",
+              "image": "https://www.pvnrw.de/img/feature.jpg",
+              "description": "Professionelle Montage von Photovoltaik-Anlagen für private und gewerbliche Kunden. Nachhaltige und effiziente Installation für maximale Energieerträge.",
+              "sku": "PV-MONTAGE-001",
+              "brand": {
+                "@type": "Brand",
+                "name": "PVNRW"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "227"
+              }
+            })
+          }}
+        />
       </Head>
+
       {/* Rest des Codes */}
       <section className="py-5 bg-light">
         <div className="container">
