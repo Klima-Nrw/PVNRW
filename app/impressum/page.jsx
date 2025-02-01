@@ -23,7 +23,8 @@ export default function About() {
   <h3 className="h5 fw-semibold mb-2">Filiale Dorsten</h3>
   <address className="fst-normal mb-4">
     <p>Pvnrw</p>
-    <p>By photovoltaik Zittel</p>
+    <p> Alexander Zittel </p>
+    <p>photovoltaik</p>
   </address>
 
   {/* Kontakt */}
@@ -52,10 +53,7 @@ export default function About() {
     </a>
   </p>
 
-  {/* USt.-IdNr. */}
-  <h3 className="h5 fw-semibold mb-2 mt-4">USt.-IdNr.</h3>
-  <p className="mb-4">Folgt</p>
-
+ 
   {/* Steuernummer */}
   <h3 className="h5 fw-semibold mb-2">Steuernummer</h3>
   <p className="mb-4">359/2734/1212</p>
@@ -66,7 +64,7 @@ export default function About() {
 
   {/* Zuständige Kammer */}
   <h3 className="h5 fw-semibold mb-2 mt-4">Zuständige Kammer</h3>
-  <p className="mb-4">Handwerkskammer Münster</p>
+  <p className="mb-4">Handwerkskammer Münster BN = 42016586 </p>
   <p className="mb-4">Bismarckallee 1, 48151 Münster</p>
   <p className="mb-4">Inhaltlich Verantwortlicher gemäß § 55 Abs. 2 RStV: Alexander  Zittel ( wie oben )</p>
 
