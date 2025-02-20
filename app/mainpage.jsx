@@ -2,10 +2,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import Form from "../components/form";
-import Boxes from "../components/boxes";
-import Offer from "../components/offer";
-import Head from 'next/head';
+import Form from "../components/form"
+import Boxes from "../components/boxes"
+import Offer from "../components/offer"
+
+
+
 
 export default function Page() {
   const [formData, setFormData] = useState({
@@ -49,7 +51,7 @@ export default function Page() {
         setStatusMessage('Fehler beim Senden der Anfrage');
       }
     } catch (error) {
-      setStatusMessage('Ein Fehler ist aufgetreten.');
+      setStatusMessage('Ein Fehler ist aufgetreten.Ein Fehler ist aufgetreten..');
     } finally {
       setIsLoading(false); // Reset loading state
     }
@@ -57,70 +59,33 @@ export default function Page() {
 
   return (
     <>
-      <Head>
-        <title>PVNrw | Wir installieren Solaranlagen</title>
-        <meta
-          name="description"
-          content="PV NRW – Ihr Experte für Photovoltaik-Lösungen in Nordrhein-Westfalen. Wir bieten maßgeschneiderte Solaranlagen für Privat- und Gewerbekunden."
-        />
-        <meta name="keywords" content="Photovoltaik, Solaranlagen, erneuerbare Energien, Solarstrom, Nordrhein-Westfalen, PV NRW" />
-        <meta name="author" content="PV NRW" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="language" content="de" />
-
-        {/* JSON-LD Schema für Bewertungen */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "PV NRW",
-                "url": "https://www.pv-nrw.de",
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": "4.8",
-                  "reviewCount": "120"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Product",
-                "name": "Photovoltaik-Anlage NRW",
-                "image": "https://www.pv-nrw.de/images/solar.jpg",
-                "description": "Hocheffiziente Photovoltaikanlagen für Privat- und Gewerbekunden in Nordrhein-Westfalen.",
-                "brand": {
-                  "@type": "Brand",
-                  "name": "PV NRW"
-                },
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": "4.8",
-                  "reviewCount": "120"
-                }
-              }
-            ]),
-          }}
-        />
-      </Head>
-
-      <section className="py-5 bg-light">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 mb-4 mb-lg-0">
-              <h1 className="display-4 fw-bold">
-                Alles aus einer Hand: <span className="text-primary">Verkauf, Montage & Reinigung von Solaranlagen</span>
-              </h1>
-              <p className="lead my-4" style={{ fontSize: "20px" }}>
-                Senken Sie Ihre Stromkosten und fördern Sie eine grüne Zukunft mit unseren Photovoltaik-Lösungen.
-                Wir bieten Planung, Installation und Wartung für nachhaltige Solarenergie und effiziente Stromversorgung.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
   
+
+<title>PVNrw | Wir installieren Solaranlagen</title>
+<meta
+    name="description"
+    content="PV NRW – Ihr Experte für Photovoltaik-Lösungen in Nordrhein-Westfalen. Wir bieten maßgeschneiderte Solaranlagen für Privat- und Gewerbekunden, um eine nachhaltige Energiezukunft zu schaffen."
+  />
+  <meta
+    name="keywords"
+    content="Photovoltaik, Solaranlagen, erneuerbare Energien, Solarstrom, Nordrhein-Westfalen, PV NRW"
+  />
+  <meta name="author" content="PV NRW" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+  <meta name="language" content="de" />
+<section className="py-5 bg-light">
+  <div className="container">
+    <div className="row align-items-center">
+      <div className="col-lg-6 mb-4 mb-lg-0">
+      <h1 className="display-4 fw-bold" >
+  Alles aus einer Hand: <span className="text-primary">Verkauf, Montage & Reinigung von Solaranlagen</span>
+</h1>
+<p className="lead my-4" style={{fontSize: "20px"}}>
+  Senken Sie Ihre Stromkosten und fördern Sie eine grüne Zukunft mit unseren Photovoltaik-Lösungen. 
+  Wir bieten Planung, Installation und Wartung für nachhaltige Solarenergie und effiziente Stromversorgung.
+</p>
+
 
         <Link className="btn btn-lg btn-primary" href="/service">
           Mehr erfahren
@@ -855,10 +820,6 @@ Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unter
   </div>
 </div>
 
-
-
-
-
 <a
   href="#"
   className="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top d-none d-md-flex"
@@ -866,6 +827,7 @@ Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unter
   <i className="bi bi-arrow-up"></i>
 </a>
 
-  </>
-  );
+</>
+
+  )
 }
