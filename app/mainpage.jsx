@@ -120,9 +120,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-    </>
-  );
-}
+  
 
         <Link className="btn btn-lg btn-primary" href="/service">
           Mehr erfahren
@@ -868,7 +866,6 @@ Setzen Sie auf erschwingliche, nachhaltige Solarenergie für Haushalte und Unter
   <i className="bi bi-arrow-up"></i>
 </a>
 
-</>
-
-  )
+  </>
+  );
 }
