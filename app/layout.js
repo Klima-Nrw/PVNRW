@@ -34,7 +34,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
 <head>
 <meta charSet="utf-8" />
-<link rel="canonical" href="https://www.pvnrw.de/" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   {/* Favicon */}
   <link href="/favicon.ico" rel="icon" />
