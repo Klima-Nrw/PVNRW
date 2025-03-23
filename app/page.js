@@ -55,6 +55,15 @@ export default function Page() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  
   <meta name="language" content="de" />
+
+<meta property="og:title" content="PVNrw | Wir installieren Solaranlagen" />
+        <meta
+          property="og:description"
+          content="PV NRW – Ihr Experte für Photovoltaik-Lösungen in Nordrhein-Westfalen. Wir bieten maßgeschneiderte Solaranlagen für Privat- und Gewerbekunden, um eine nachhaltige Energiezukunft zu schaffen."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://pvnrw.de" />
+      
 <Headers />
 
 
