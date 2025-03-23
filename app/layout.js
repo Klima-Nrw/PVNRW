@@ -55,7 +55,14 @@ export default function RootLayout({ children }) {
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
     rel="stylesheet"
   />
-
+<meta property="og:title" content="PVNrw | Wir installieren Solaranlagen" />
+        <meta
+          property="og:description"
+          content="PV NRW – Ihr Experte für Photovoltaik-Lösungen in Nordrhein-Westfalen. Wir bieten maßgeschneiderte Solaranlagen für Privat- und Gewerbekunden, um eine nachhaltige Energiezukunft zu schaffen."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://pvnrw.de" />
+            <meta property="og:image" content="https://www.pvnrw.de/img/logo.png" />
   
 </head>
 
