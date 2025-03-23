@@ -42,6 +42,8 @@ export default function Page() {
                })
              }}
            />
+
+             <head>
              <title>PVNrw | Wir installieren Solaranlagen</title>
 <meta
     name="description"
@@ -63,7 +65,8 @@ export default function Page() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://pvnrw.de" />
-      
+            <meta property="og:image" content="https://www.pvnrw.de/img/logo.png" />
+      </head>
 <Headers />
 
 
