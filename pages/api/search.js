@@ -22,20 +22,26 @@ export default async function handler(req, res) {
     });
 
     const page = await browser.newPage();
-    await page.goto(url, { waitUntil: 'networkidle2' });
+    await page.goto(url, { waitUntil: 'domcontentloaded' });
+
+    // Warten, bis die Anzeigen geladen sind
+    await page.waitForSelector('article.aditem', { timeout: 10000 });
+
+    // Optional: Scrollen, damit lazy-loaded Bilder/Anzeigen erscheinen
+    await autoScroll(page);
 
     const ads = await page.evaluate(() => {
-      const adNodes = Array.from(document.querySelectorAll('article'));
+      const adNodes = Array.from(document.querySelectorAll('article.aditem:not([id*="altads"])'));
       return adNodes.map(ad => {
-        const titleEl = ad.querySelector('a[data-testid="ad-title"]');
-        const priceEl = ad.querySelector('p[data-testid="ad-price"]');
-        const linkEl = ad.querySelector('a[data-testid="ad-title"]');
+        const titleEl = ad.querySelector('a.ellipsis');
+        const priceEl = ad.querySelector('p.aditem-main--middle--price-shipping--price');
+        const linkEl = ad.querySelector('a.ellipsis');
         const imgEl = ad.querySelector('img');
 
         return {
           title: titleEl ? titleEl.textContent.trim() : 'No Title',
           price: priceEl ? priceEl.textContent.trim() : 'No Price',
-          link: linkEl ? linkEl.href : '#',
+          link: linkEl ? `https://www.kleinanzeigen.de${linkEl.getAttribute('href')}` : '#',
           imageUrl: imgEl ? imgEl.src : "https://static.kleinanzeigen.de/static/img/common/logo/logo-kleinanzeigen-horizontal.1f2pao1sh7vgo.svg"
         };
       });
@@ -53,4 +59,23 @@ export default async function handler(req, res) {
     console.error(error);
     res.status(500).json({ error: error.message });
   }
+}
+
+// Helferfunktion zum Scrollen der Seite
+async function autoScroll(page) {
+  await page.evaluate(async () => {
+    await new Promise((resolve) => {
+      let totalHeight = 0;
+      const distance = 100;
+      const timer = setInterval(() => {
+        const scrollHeight = document.body.scrollHeight;
+        window.scrollBy(0, distance);
+        totalHeight += distance;
+        if (totalHeight >= scrollHeight) {
+          clearInterval(timer);
+          resolve();
+        }
+      }, 100);
+    });
+  });
 }
