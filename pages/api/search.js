@@ -1,4 +1,5 @@
-import puppeteer from 'puppeteer';
+import chromium from 'chrome-aws-lambda';
+import puppeteer from 'puppeteer-core';
 
 export default async function handler(req, res) {
   try {
@@ -13,13 +14,14 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Invalid category' });
     }
 
-    const browser = await puppeteer.launch({ args: ['--no-sandbox'], headless: true });
+    const browser = await puppeteer.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: chromium.headless,
+    });
+
     const page = await browser.newPage();
-
-    await page.setUserAgent(
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    );
-
     await page.goto(url, { waitUntil: 'networkidle2' });
 
     const ads = await page.evaluate(() => {
@@ -39,13 +41,12 @@ export default async function handler(req, res) {
       });
     });
 
-    // Filtere unerwünschte Anzeigen
+    await browser.close();
+
     const filteredAds = ads.filter(ad => {
       const excludedTerms = ['Praktikant', 'Verstärkung', 'Festanstellung'];
       return !excludedTerms.some(term => ad.title.toLowerCase().includes(term.toLowerCase()));
     });
-
-    await browser.close();
 
     res.status(200).json({ ads: filteredAds });
   } catch (error) {
