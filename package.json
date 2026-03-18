@@ -23,7 +23,7 @@
     "nodemailer": "^6.9.16",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
-    "puppeteer-core": "^20.9.0",
+    "puppeteer-core": "^10.1.0",
     "chrome-aws-lambda": "^10.1.0"
   },
   "devDependencies": {
